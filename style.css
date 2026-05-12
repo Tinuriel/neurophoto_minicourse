@@ -1,0 +1,795 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cream: #F5F0E8;
+  --black: #1A1A1A;
+  --burgundy: #8B1A2F;
+  --gray: #6B6B6B;
+  --white: #FFFFFF;
+}
+
+body {
+  background: var(--cream);
+  color: var(--black);
+  font-family: 'Jost', sans-serif;
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+/* На більших екранах max-width розширюється через медіа-запити */
+
+/* ── СПІЛЬНІ СТИЛІ ── */
+
+.section { padding: 40px 24px 48px; }
+.section-white { padding: 40px 24px 48px; background: var(--white); }
+
+.section-label {
+  font-size: 10px; font-weight: 400; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--burgundy);
+  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+}
+
+.section-label::before {
+  content: ''; display: inline-block;
+  width: 20px; height: 0.5px; background: var(--burgundy);
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px; font-weight: 300; line-height: 1.1;
+  color: var(--black); margin-bottom: 28px; letter-spacing: -0.01em;
+}
+
+h2 em { font-style: italic; color: var(--burgundy); }
+
+.btn, a.btn {
+  background: var(--burgundy); color: white; border: none;
+  padding: 15px 24px; font-family: 'Jost', sans-serif;
+  font-size: 14px; font-weight: 400; letter-spacing: 0.06em;
+  cursor: pointer; border-radius: 2px; flex: 1;
+  text-align: center; display: block; width: 100%;
+  text-decoration: none;
+}
+
+.cta-block { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+.cta-block .btn { flex: 1; width: auto; display: block; }
+
+.price-old { font-size: 15px; color: var(--gray); text-decoration: line-through; white-space: nowrap; }
+.fine-print { font-size: 11px; font-weight: 300; color: var(--gray); line-height: 1.5; text-align: center; }
+.screen-divider { height: 1px; background: rgba(26,26,26,0.07); }
+
+/* ── ЕКРАН 1 ── */
+
+.top-bar {
+  padding: 16px 24px; display: flex; justify-content: space-between;
+  align-items: center; border-bottom: 0.5px solid rgba(26,26,26,0.1);
+}
+
+.top-tag { font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); }
+.top-price { font-size: 13px; font-weight: 500; color: var(--burgundy); letter-spacing: 0.04em; }
+
+.photo-block {
+  height: 260px; background: #D4CEC4;
+  display: grid; grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: 1fr 1fr; gap: 2px;
+}
+
+.photo-cell {
+  background: #C8C0B4; display: flex; align-items: center;
+  justify-content: center; flex-direction: column; gap: 6px;
+}
+
+.photo-cell.main { grid-row: 1 / 3; background: #BFB5A8; }
+.photo-cell:nth-child(2) { background: #CEC8BC; }
+.photo-cell:nth-child(3) { background: #D8D2C8; }
+
+.photo-icon {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: rgba(139,26,47,0.15); display: flex;
+  align-items: center; justify-content: center;
+}
+
+.photo-label-cell { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(26,26,26,0.4); }
+
+.hero { padding: 28px 24px 0; }
+
+.hero-label {
+  font-size: 10px; font-weight: 400; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--burgundy);
+  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+}
+
+.hero-label::before {
+  content: ''; display: inline-block; width: 20px; height: 0.5px; background: var(--burgundy);
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 46px; font-weight: 300; line-height: 1.05;
+  color: var(--black); margin-bottom: 20px; letter-spacing: -0.01em;
+}
+
+h1 em { font-style: italic; color: var(--burgundy); }
+
+.hero-divider { width: 100%; height: 0.5px; background: rgba(26,26,26,0.12); margin-bottom: 20px; }
+
+.pain { font-size: 15px; font-weight: 300; line-height: 1.65; color: var(--gray); margin-bottom: 14px; }
+.promise { font-size: 16px; font-weight: 400; line-height: 1.6; color: var(--black); margin-bottom: 10px; }
+.promise strong { font-weight: 500; }
+.details { font-size: 14px; font-weight: 300; line-height: 1.65; color: var(--gray); margin-bottom: 28px; }
+
+.guarantee-line {
+  font-size: 11px; font-weight: 300; color: var(--gray); line-height: 1.5;
+  padding: 14px 0 32px; border-top: 0.5px solid rgba(26,26,26,0.1);
+  display: flex; align-items: flex-start; gap: 8px;
+}
+
+.guarantee-line::before { content: '↺'; font-size: 13px; color: var(--burgundy); flex-shrink: 0; }
+
+/* ── ЕКРАН 2 ── */
+
+.items { display: flex; flex-direction: column; gap: 0; margin-bottom: 28px; }
+
+.item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 0; border-bottom: 0.5px solid rgba(26,26,26,0.1);
+}
+
+.item:first-child { border-top: 0.5px solid rgba(26,26,26,0.1); }
+
+.item-check {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(139,26,47,0.1); display: flex;
+  align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+
+.item-text { font-size: 14px; font-weight: 300; line-height: 1.6; color: var(--black); }
+
+.not-for { background: var(--white); border-radius: 4px; padding: 20px; }
+
+.not-label {
+  font-size: 10px; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--gray); margin-bottom: 14px;
+}
+
+.not-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.not-item:last-child { margin-bottom: 0; }
+.not-dash { font-size: 13px; color: var(--gray); flex-shrink: 0; margin-top: 2px; }
+.not-text { font-size: 13px; font-weight: 300; line-height: 1.55; color: var(--gray); }
+
+/* ── ЕКРАН 3 ── */
+
+.photo-wrap { width: 100%; overflow: hidden; position: relative; }
+.photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+
+.photo-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--cream));
+}
+
+.name-sub { font-size: 13px; font-weight: 300; color: var(--gray); letter-spacing: 0.06em; margin-bottom: 24px; }
+
+.stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: rgba(26,26,26,0.1); border: 0.5px solid rgba(26,26,26,0.1);
+  border-radius: 4px; overflow: hidden; margin-bottom: 24px;
+}
+
+.stat { background: var(--white); padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--burgundy); line-height: 1; }
+.stat-label { font-size: 11px; font-weight: 300; color: var(--gray); line-height: 1.4; }
+
+.bio { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--black); margin-bottom: 20px; }
+
+.bio-highlight {
+  font-size: 15px; font-weight: 400; line-height: 1.65; color: var(--black);
+  border-left: 2px solid var(--burgundy); padding-left: 16px;
+}
+
+/* ── ЕКРАН 4 ── */
+
+.accordion {
+  display: flex; flex-direction: column; gap: 1px;
+  background: rgba(26,26,26,0.1); border: 0.5px solid rgba(26,26,26,0.1);
+  border-radius: 4px; overflow: hidden;
+}
+
+.acc-item { background: var(--white); }
+
+.acc-header {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px; cursor: pointer; user-select: none; transition: background 0.2s;
+}
+
+.acc-header:hover,
+.acc-header.active { background: #FAF8F4; }
+
+.acc-day {
+  font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--burgundy); min-width: 44px; flex-shrink: 0;
+}
+
+.acc-title { font-size: 14px; font-weight: 400; color: var(--black); line-height: 1.4; flex: 1; }
+
+.acc-icon {
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 0.5px solid rgba(26,26,26,0.2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: transform 0.3s;
+}
+
+.acc-header.active .acc-icon { transform: rotate(45deg); border-color: var(--burgundy); }
+
+.acc-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.acc-body.open { max-height: 500px; }
+
+.acc-inner { padding: 0 16px 18px 74px; display: flex; flex-direction: column; gap: 12px; }
+
+.acc-section-title {
+  font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gray); margin-bottom: 4px;
+}
+
+.acc-text { font-size: 13px; font-weight: 300; line-height: 1.6; color: var(--black); }
+
+.acc-result {
+  font-size: 13px; font-weight: 300; line-height: 1.6; color: var(--black);
+  display: flex; align-items: flex-start; gap: 8px;
+}
+
+.acc-result::before { content: '✓'; color: var(--burgundy); font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+
+.acc-bonus {
+  font-size: 12px; font-weight: 300; line-height: 1.6; color: var(--gray);
+  background: var(--cream); border-radius: 3px; padding: 8px 12px;
+  display: flex; align-items: flex-start; gap: 8px;
+}
+
+.acc-bonus::before { content: '★'; color: var(--burgundy); font-size: 11px; flex-shrink: 0; margin-top: 1px; }
+
+.divider-inner { height: 0.5px; background: rgba(26,26,26,0.08); }
+
+/* ── ЕКРАН 5 ── */
+
+.steps { display: flex; flex-direction: column; gap: 0; margin-bottom: 32px; }
+
+.step { display: flex; gap: 16px; padding-bottom: 24px; }
+.step:last-child { padding-bottom: 0; }
+
+.step-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+
+.step-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 0.5px solid var(--burgundy);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 400; color: var(--burgundy);
+}
+
+.step-line { width: 0.5px; flex: 1; background: rgba(139,26,47,0.2); margin-top: 6px; }
+.step:last-child .step-line { display: none; }
+
+.step-content { padding-top: 6px; }
+.step-title { font-size: 14px; font-weight: 500; color: var(--black); margin-bottom: 6px; line-height: 1.3; }
+.step-text { font-size: 13px; font-weight: 300; line-height: 1.65; color: var(--gray); }
+
+.highlight-block {
+  background: var(--white); border-radius: 4px; padding: 20px;
+  margin-bottom: 28px; border-left: 2px solid var(--burgundy);
+}
+
+.highlight-text { font-size: 14px; font-weight: 300; line-height: 1.7; color: var(--black); }
+
+/* ── ЕКРАН 6 ── */
+
+.block { border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
+.block-header { display: flex; align-items: center; gap: 10px; padding: 12px 16px; }
+.block-header.before { background: #1A1A1A; }
+.block-header.after { background: var(--burgundy); }
+.block-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+.block-title { font-size: 14px; font-weight: 400; color: white; }
+.block-body { background: var(--white); padding: 18px 16px; }
+
+.block-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+.block-item:last-child { margin-bottom: 0; }
+.block-icon { font-size: 13px; flex-shrink: 0; margin-top: 1px; color: var(--gray); }
+.block-icon.check { color: var(--burgundy); }
+.block-text { font-size: 13px; font-weight: 300; line-height: 1.6; color: var(--black); }
+
+.budget-tag {
+  display: block; background: rgba(26,26,26,0.06); border-radius: 2px;
+  padding: 10px 16px; font-size: 13px; color: var(--black);
+  margin-top: 14px; text-align: center; border: 0.5px solid rgba(26,26,26,0.1);
+}
+
+.budget-tag span { color: var(--burgundy); font-weight: 500; }
+
+.vs-divider { display: flex; align-items: center; gap: 12px; margin: 16px 0; }
+.vs-line { flex: 1; height: 0.5px; background: rgba(26,26,26,0.12); }
+.vs-text { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; font-style: italic; color: var(--gray); }
+
+.summary { background: var(--burgundy); border-radius: 4px; padding: 20px; margin-top: 20px; text-align: center; }
+.summary-text { font-size: 15px; font-weight: 300; line-height: 1.65; color: white; }
+.summary-text strong { font-weight: 500; display: block; font-size: 17px; margin-bottom: 6px; }
+
+/* ── ЕКРАН 8 ── */
+
+.guarantee-block {
+  background: var(--white); border-radius: 4px; padding: 28px 24px;
+  margin-bottom: 24px; border: 0.5px solid rgba(26,26,26,0.1);
+}
+
+.guarantee-icon {
+  width: 52px; height: 52px; border-radius: 50%;
+  border: 1px solid rgba(139,26,47,0.3); background: rgba(139,26,47,0.06);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+}
+
+.guarantee-title { font-size: 17px; font-weight: 400; color: var(--black); margin-bottom: 12px; line-height: 1.4; }
+.guarantee-title span { color: var(--burgundy); font-weight: 500; }
+.guarantee-text { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--gray); }
+
+.g-divider { height: 0.5px; background: rgba(26,26,26,0.1); margin: 20px 0; }
+
+.points { display: flex; flex-direction: column; gap: 14px; }
+.point { display: flex; align-items: flex-start; gap: 12px; }
+
+.point-icon {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid rgba(139,26,47,0.3); background: rgba(139,26,47,0.06);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+
+.point-text { font-size: 13px; font-weight: 300; line-height: 1.6; color: var(--black); }
+
+/* ── ЕКРАН 9 ── */
+
+.faq-accordion { display: flex; flex-direction: column; border-top: 0.5px solid rgba(26,26,26,0.12); }
+.faq-item { border-bottom: 0.5px solid rgba(26,26,26,0.12); }
+
+.faq-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 14px; padding: 18px 0; cursor: pointer; user-select: none;
+}
+
+.faq-question { font-size: 14px; font-weight: 400; color: var(--black); line-height: 1.5; flex: 1; }
+.faq-header.active .faq-question { color: var(--burgundy); }
+
+.faq-icon {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 0.5px solid rgba(26,26,26,0.2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px; transition: transform 0.3s, border-color 0.3s;
+}
+
+.faq-header.active .faq-icon { transform: rotate(45deg); border-color: var(--burgundy); }
+
+.faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.faq-body.open { max-height: 300px; }
+
+.faq-answer { font-size: 13px; font-weight: 300; line-height: 1.75; color: var(--gray); padding-bottom: 18px; }
+
+/* ── ДАТА СТАРТУ ── */
+
+.start-date {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0.5px solid rgba(139,26,47,0.2);
+  border-radius: 2px;
+  padding: 5px 10px;
+  background: rgba(139,26,47,0.04);
+}
+
+.date-cta {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--gray);
+  text-align: center;
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+.date-cta span {
+  color: var(--burgundy);
+  font-weight: 500;
+}
+
+
+
+/* ── ТАЙМЕР ── */
+
+.timer-section {
+  padding: 40px 24px 48px;
+  background: var(--black);
+  text-align: center;
+}
+
+.timer-label {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 24px;
+}
+
+.timer-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.timer-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.timer-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 300;
+  color: white;
+  line-height: 1;
+  min-width: 72px;
+  text-align: center;
+}
+
+.timer-sep {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--burgundy);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.timer-caption {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.timer-section .cta-block { margin-top: 24px; }
+.timer-section .cta-block .btn { background: #C4354F; }
+.timer-section .price-old { color: rgba(255,255,255,0.4); }
+
+/* ── ПЛАВАЮЧА КНОПКА ── */
+
+.float-btn-wrap {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 390px;
+  z-index: 999;
+  transition: bottom 0.3s ease-in-out;
+}
+
+.float-btn-wrap.visible { bottom: 0; }
+
+.float-btn, a.float-btn {
+  width: 100%;
+  padding: 18px 24px;
+  background: var(--burgundy);
+  color: white;
+  border: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-shadow: 0 -4px 20px rgba(139,26,47,0.3);
+  text-decoration: none;
+}
+
+.footer { background: var(--black); padding: 32px 24px 88px; text-align: center; }
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 300; color: white;
+  letter-spacing: 0.08em; margin-bottom: 8px;
+}
+
+.footer-text { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.4); line-height: 1.6; }
+
+/* ══════════════════════════════════════
+   АДАПТИВ — ПЛАНШЕТ (768px+)
+══════════════════════════════════════ */
+
+@media (min-width: 768px) {
+  body {
+    max-width: 768px;
+  }
+
+  .section { padding: 56px 48px 64px; }
+
+  h1 { font-size: 64px; }
+  h2 { font-size: 52px; margin-bottom: 36px; }
+
+  /* Екран 1 */
+  .top-bar { padding: 20px 48px; }
+
+  .photo-block { height: 380px; }
+
+  .hero { padding: 40px 48px 0; }
+
+  .pain { font-size: 17px; }
+  .promise { font-size: 18px; }
+  .details { font-size: 16px; }
+
+  .btn { font-size: 16px; padding: 18px 32px; }
+  .price-old { font-size: 17px; }
+
+  /* Екран 2 */
+  .item-text { font-size: 16px; }
+  .not-text { font-size: 15px; }
+
+  /* Екран 3 — автор */
+  .photo-wrap { height: 500px; }
+
+  .stats { grid-template-columns: repeat(4, 1fr); }
+  .stat-num { font-size: 34px; }
+  .stat-label { font-size: 12px; }
+  .bio { font-size: 16px; }
+  .bio-highlight { font-size: 17px; }
+
+  /* Екран 4 — акордеон */
+  .acc-title { font-size: 16px; }
+  .acc-text { font-size: 14px; }
+  .acc-result { font-size: 14px; }
+  .acc-bonus { font-size: 13px; }
+
+  /* Екран 5 */
+  .step-title { font-size: 16px; }
+  .step-text { font-size: 15px; }
+  .highlight-text { font-size: 16px; }
+
+  /* Екран 6 */
+  .block-text { font-size: 15px; }
+  .budget-tag { font-size: 15px; }
+  .summary-text { font-size: 17px; }
+  .summary-text strong { font-size: 20px; }
+
+  /* Гарантія */
+  .guarantee-title { font-size: 20px; }
+  .guarantee-text { font-size: 16px; }
+  .point-text { font-size: 15px; }
+
+  /* FAQ */
+  .faq-question { font-size: 16px; }
+  .faq-answer { font-size: 15px; }
+
+  /* Таймер */
+  .timer-num { font-size: 72px; min-width: 90px; }
+  .timer-sep { font-size: 60px; }
+
+  /* Плаваюча кнопка */
+  .float-btn-wrap { max-width: 768px; }
+  .float-btn { font-size: 17px; padding: 20px 32px; }
+
+  /* Footer */
+  .footer-logo { font-size: 24px; }
+  .footer-text { font-size: 13px; }
+}
+
+/* ══════════════════════════════════════
+   АДАПТИВ — ДЕСКТОП (1024px+)
+══════════════════════════════════════ */
+
+@media (min-width: 1024px) {
+  body {
+    max-width: 1100px;
+    background: var(--cream);
+  }
+
+  .section { padding: 72px 80px 80px; }
+
+  h1 { font-size: 80px; }
+  h2 { font-size: 64px; margin-bottom: 40px; }
+
+  /* Топ-бар */
+  .top-bar { padding: 20px 80px; }
+
+  /* Екран 1 — двоколонковий layout */
+  .hero-desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+    padding: 56px 80px 0;
+  }
+
+  .photo-block {
+    height: 560px;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .hero {
+    padding: 56px 80px 0;
+  }
+
+  /* Екран 2 — двоколонковий */
+  .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+  }
+
+  .item:nth-child(1),
+  .item:nth-child(3),
+  .item:nth-child(5) {
+    border-right: 0.5px solid rgba(26,26,26,0.08);
+    padding-right: 32px;
+  }
+
+  /* Екран 3 — автор: фото і текст поруч */
+  .author-desktop {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .photo-wrap {
+    height: 100%;
+    min-height: 500px;
+  }
+
+  .author-content {
+    padding: 56px 80px;
+  }
+
+  /* Статистика в 2 рядки по 2 */
+  .stats { grid-template-columns: repeat(2, 1fr); }
+
+  /* Екран 4 — акордеон ширший */
+  .acc-inner { padding-left: 80px; }
+
+  /* Екран 5 — кроки в 2 колонки */
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 48px;
+  }
+
+  .step { padding-bottom: 32px; }
+
+  /* Екран 6 — до/після поруч */
+  .before-after-wrap {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    align-items: start;
+  }
+
+  .vs-divider {
+    flex-direction: column;
+    margin: 0 16px;
+    height: 100%;
+  }
+
+  .vs-line {
+    flex: 1;
+    width: 0.5px;
+    height: auto;
+  }
+
+  /* Таймер */
+  .timer-num { font-size: 88px; min-width: 110px; }
+  .timer-sep { font-size: 72px; }
+  .timer-section .cta-block { max-width: 480px; margin: 24px auto 0; }
+
+  /* FAQ — двоколонковий */
+  .faq-accordion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 48px;
+    border-top: none;
+  }
+
+  .faq-item {
+    border-top: 0.5px solid rgba(26,26,26,0.12);
+  }
+
+  /* Плаваюча кнопка */
+  .float-btn-wrap {
+    max-width: 480px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px 2px 0 0;
+    overflow: hidden;
+  }
+
+  .float-btn { font-size: 18px; padding: 22px 40px; }
+
+  /* Footer */
+  .footer { padding: 48px 80px 108px; }
+  .footer-logo { font-size: 28px; margin-bottom: 12px; }
+  .footer-text { font-size: 14px; }
+}
+
+/* ── БЛОК АВТОРА — базовий (мобіль) ── */
+
+.author-section {
+  display: block;
+}
+
+.author-photo-col .photo-wrap {
+  height: 420px;
+  overflow: hidden;
+  position: relative;
+}
+
+.author-photo-col .photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.author-text-col {
+  padding: 28px 24px 48px;
+}
+
+/* Планшет — фото трохи менше, текст ширший */
+@media (min-width: 768px) {
+  .author-photo-col .photo-wrap { height: 500px; }
+  .author-text-col { padding: 40px 48px 64px; }
+}
+
+/* Десктоп — дві колонки поруч */
+@media (min-width: 1024px) {
+  .author-section {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    align-items: stretch;
+    min-height: 600px;
+  }
+
+  .author-photo-col { overflow: hidden; }
+
+  .author-photo-col .photo-wrap {
+    height: 100%;
+    min-height: 600px;
+  }
+
+  .author-photo-col .photo-wrap .photo-overlay {
+    background: linear-gradient(to right, transparent, var(--cream));
+    top: 0; bottom: 0; right: 0;
+    width: 80px;
+    height: 100%;
+    left: auto;
+  }
+
+  .author-text-col {
+    padding: 56px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .author-text-col .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}

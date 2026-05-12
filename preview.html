@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Фото за 5 хвилин: нейрофотосесія для експерта</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cream: #F5F0E8;
+  --black: #1A1A1A;
+  --burgundy: #8B1A2F;
+  --gray: #6B6B6B;
+  --white: #FFFFFF;
+}
+
+body {
+  background: var(--cream);
+  color: var(--black);
+  font-family: 'Jost', sans-serif;
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+/* На більших екранах max-width розширюється через медіа-запити */
+
+/* ── СПІЛЬНІ СТИЛІ ── */
+
+.section { padding: 40px 24px 48px; }
+.section-white { padding: 40px 24px 48px; background: var(--white); }
+
+.section-label {
+  font-size: 10px; font-weight: 400; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--burgundy);
+  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+}
+
+.section-label::before {
+  content: ''; display: inline-block;
+  width: 20px; height: 0.5px; background: var(--burgundy);
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px; font-weight: 300; line-height: 1.1;
+  color: var(--black); margin-bottom: 28px; letter-spacing: -0.01em;
+}
+
+h2 em { font-style: italic; color: var(--burgundy); }
+
+.btn, a.btn {
+  background: var(--burgundy); color: white; border: none;
+  padding: 15px 24px; font-family: 'Jost', sans-serif;
+  font-size: 14px; font-weight: 400; letter-spacing: 0.06em;
+  cursor: pointer; border-radius: 2px; flex: 1;
+  text-align: center; display: block; width: 100%;
+  text-decoration: none;
+}
+
+.cta-block { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+.cta-block .btn { flex: 1; width: auto; display: block; }
+
+.price-old { font-size: 15px; color: var(--gray); text-decoration: line-through; white-space: nowrap; }
+.fine-print { font-size: 11px; font-weight: 300; color: var(--gray); line-height: 1.5; text-align: center; }
+.screen-divider { height: 1px; background: rgba(26,26,26,0.07); }
+
+/* ── ЕКРАН 1 ── */
+
+.top-bar {
+  padding: 16px 24px; display: flex; justify-content: space-between;
+  align-items: center; border-bottom: 0.5px solid rgba(26,26,26,0.1);
+}
+
+.top-tag { font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); }
+.top-price { font-size: 13px; font-weight: 500; color: var(--burgundy); letter-spacing: 0.04em; }
+
+.photo-block {
+  height: 260px; background: #D4CEC4;
+  display: grid; grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: 1fr 1fr; gap: 2px;
+}
+
+.photo-cell {
+  background: #C8C0B4; display: flex; align-items: center;
+  justify-content: center; flex-direction: column; gap: 6px;
+}
+
+.photo-cell.main { grid-row: 1 / 3; background: #BFB5A8; }
+.photo-cell:nth-child(2) { background: #CEC8BC; }
+.photo-cell:nth-child(3) { background: #D8D2C8; }
+
+.photo-icon {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: rgba(139,26,47,0.15); display: flex;
+  align-items: center; justify-content: center;
+}
+
+.photo-label-cell { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(26,26,26,0.4); }
+
+.hero { padding: 28px 24px 0; }
+
+.hero-label {
+  font-size: 10px; font-weight: 400; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--burgundy);
+  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+}
+
+.hero-label::before {
+  content: ''; display: inline-block; width: 20px; height: 0.5px; background: var(--burgundy);
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 46px; font-weight: 300; line-height: 1.05;
+  color: var(--black); margin-bottom: 20px; letter-spacing: -0.01em;
+}
+
+h1 em { font-style: italic; color: var(--burgundy); }
+
+.hero-divider { width: 100%; height: 0.5px; background: rgba(26,26,26,0.12); margin-bottom: 20px; }
+
+.pain { font-size: 15px; font-weight: 300; line-height: 1.65; color: var(--gray); margin-bottom: 14px; }
+.promise { font-size: 16px; font-weight: 400; line-height: 1.6; color: var(--black); margin-bottom: 10px; }
+.promise strong { font-weight: 500; }
+.details { font-size: 14px; font-weight: 300; line-height: 1.65; color: var(--gray); margin-bottom: 28px; }
+
+.guarantee-line {
+  font-size: 11px; font-weight: 300; color: var(--gray); line-height: 1.5;
+  padding: 14px 0 32px; border-top: 0.5px solid rgba(26,26,26,0.1);
+  display: flex; align-items: flex-start; gap: 8px;
+}
+
+.guarantee-line::before { content: '↺'; font-size: 13px; color: var(--burgundy); flex-shrink: 0; }
+
+/* ── ЕКРАН 2 ── */
+
+.items { display: flex; flex-direction: column; gap: 0; margin-bottom: 28px; }
+
+.item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 0; border-bottom: 0.5px solid rgba(26,26,26,0.1);
+}
+
+.item:first-child { border-top: 0.5px solid rgba(26,26,26,0.1); }
+
+.item-check {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(139,26,47,0.1); display: flex;
+  align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+
+.item-text { font-size: 14px; font-weight: 300; line-height: 1.6; color: var(--black); }
+
+.not-for { background: var(--white); border-radius: 4px; padding: 20px; }
+
+.not-label {
+  font-size: 10px; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--gray); margin-bottom: 14px;
+}
+
+.not-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.not-item:last-child { margin-bottom: 0; }
+.not-dash { font-size: 13px; color: var(--gray); flex-shrink: 0; margin-top: 2px; }
+.not-text { font-size: 13px; font-weight: 300; line-height: 1.55; color: var(--gray); }
+
+/* ── ЕКРАН 3 ── */
+
+.photo-wrap { width: 100%; overflow: hidden; position: relative; }
+.photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+
+.photo-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--cream));
+}
+
+.name-sub { font-size: 13px; font-weight: 300; color: var(--gray); letter-spacing: 0.06em; margin-bottom: 24px; }
+
+.stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: rgba(26,26,26,0.1); border: 0.5px solid rgba(26,26,26,0.1);
+  border-radius: 4px; overflow: hidden; margin-bottom: 24px;
+}
+
+.stat { background: var(--white); padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--burgundy); line-height: 1; }
+.stat-label { font-size: 11px; font-weight: 300; color: var(--gray); line-height: 1.4; }
+
+.bio { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--black); margin-bottom: 20px; }
+
+.bio-highlight {
+  font-size: 15px; font-weight: 400; line-height: 1.65; color: var(--black);
+  border-left: 2px solid var(--burgundy); padding-left: 16px;
+}
+
+/* ── ЕКРАН 4 ── */
+
+.accordion {
+  display: flex; flex-direction: column; gap: 1px;
+  background: rgba(26,26,26,0.1); border: 0.5px solid rgba(26,26,26,0.1);
+  border-radius: 4px; overflow: hidden;
+}
+
+.acc-item { background: var(--white); }
+
+.acc-header {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px; cursor: pointer; user-select: none; transition: background 0.2s;
+}
+
+.acc-header:hover,
+.acc-header.active { background: #FAF8F4; }
+
+.acc-day {
+  font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--burgundy); min-width: 44px; flex-shrink: 0;
+}
+
+.acc-title { font-size: 14px; font-weight: 400; color: var(--black); line-height: 1.4; flex: 1; }
+
+.acc-icon {
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 0.5px solid rgba(26,26,26,0.2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: transform 0.3s;
+}
+
+.acc-header.active .acc-icon { transform: rotate(45deg); border-color: var(--burgundy); }
+
+.acc-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.acc-body.open { max-height: 500px; }
+
+.acc-inner { padding: 0 16px 18px 74px; display: flex; flex-direction: column; gap: 12px; }
+
+.acc-section-title {
+  font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gray); margin-bottom: 4px;
+}
+
+.acc-text { font-size: 13px; font-weight: 300; line-height: 1.6; color: var(--black); }
+
+.acc-result {
+  font-size: 13px; font-weight: 300; line-height: 1.6; color: var(--black);
+  display: flex; align-items: flex-start; gap: 8px;
+}
+
+.acc-result::before { content: '✓'; color: var(--burgundy); font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+
+.acc-bonus {
+  font-size: 12px; font-weight: 300; line-height: 1.6; color: var(--gray);
+  background: var(--cream); border-radius: 3px; padding: 8px 12px;
+  display: flex; align-items: flex-start; gap: 8px;
+}
+
+.acc-bonus::before { content: '★'; color: var(--burgundy); font-size: 11px; flex-shrink: 0; margin-top: 1px; }
+
+.divider-inner { height: 0.5px; background: rgba(26,26,26,0.08); }
+
+/* ── ЕКРАН 5 ── */
+
+.steps { display: flex; flex-direction: column; gap: 0; margin-bottom: 32px; }
+
+.step { display: flex; gap: 16px; padding-bottom: 24px; }
+.step:last-child { padding-bottom: 0; }
+
+.step-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+
+.step-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 0.5px solid var(--burgundy);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 400; color: var(--burgundy);
+}
+
+.step-line { width: 0.5px; flex: 1; background: rgba(139,26,47,0.2); margin-top: 6px; }
+.step:last-child .step-line { display: none; }
+
+.step-content { padding-top: 6px; }
+.step-title { font-size: 14px; font-weight: 500; color: var(--black); margin-bottom: 6px; line-height: 1.3; }
+.step-text { font-size: 13px; font-weight: 300; line-height: 1.65; color: var(--gray); }
+
+.highlight-block {
+  background: var(--white); border-radius: 4px; padding: 20px;
+  margin-bottom: 28px; border-left: 2px solid var(--burgundy);
+}
+
+.highlight-text { font-size: 14px; font-weight: 300; line-height: 1.7; color: var(--black); }
+
+/* ── ЕКРАН 6 ── */
+
+.block { border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
+.block-header { display: flex; align-items: center; gap: 10px; padding: 12px 16px; }
+.block-header.before { background: #1A1A1A; }
+.block-header.after { background: var(--burgundy); }
+.block-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+.block-title { font-size: 14px; font-weight: 400; color: white; }
+.block-body { background: var(--white); padding: 18px 16px; }
+
+.block-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+.block-item:last-child { margin-bottom: 0; }
+.block-icon { font-size: 13px; flex-shrink: 0; margin-top: 1px; color: var(--gray); }
+.block-icon.check { color: var(--burgundy); }
+.block-text { font-size: 13px; font-weight: 300; line-height: 1.6; color: var(--black); }
+
+.budget-tag {
+  display: block; background: rgba(26,26,26,0.06); border-radius: 2px;
+  padding: 10px 16px; font-size: 13px; color: var(--black);
+  margin-top: 14px; text-align: center; border: 0.5px solid rgba(26,26,26,0.1);
+}
+
+.budget-tag span { color: var(--burgundy); font-weight: 500; }
+
+.vs-divider { display: flex; align-items: center; gap: 12px; margin: 16px 0; }
+.vs-line { flex: 1; height: 0.5px; background: rgba(26,26,26,0.12); }
+.vs-text { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; font-style: italic; color: var(--gray); }
+
+.summary { background: var(--burgundy); border-radius: 4px; padding: 20px; margin-top: 20px; text-align: center; }
+.summary-text { font-size: 15px; font-weight: 300; line-height: 1.65; color: white; }
+.summary-text strong { font-weight: 500; display: block; font-size: 17px; margin-bottom: 6px; }
+
+/* ── ЕКРАН 8 ── */
+
+.guarantee-block {
+  background: var(--white); border-radius: 4px; padding: 28px 24px;
+  margin-bottom: 24px; border: 0.5px solid rgba(26,26,26,0.1);
+}
+
+.guarantee-icon {
+  width: 52px; height: 52px; border-radius: 50%;
+  border: 1px solid rgba(139,26,47,0.3); background: rgba(139,26,47,0.06);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+}
+
+.guarantee-title { font-size: 17px; font-weight: 400; color: var(--black); margin-bottom: 12px; line-height: 1.4; }
+.guarantee-title span { color: var(--burgundy); font-weight: 500; }
+.guarantee-text { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--gray); }
+
+.g-divider { height: 0.5px; background: rgba(26,26,26,0.1); margin: 20px 0; }
+
+.points { display: flex; flex-direction: column; gap: 14px; }
+.point { display: flex; align-items: flex-start; gap: 12px; }
+
+.point-icon {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid rgba(139,26,47,0.3); background: rgba(139,26,47,0.06);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+
+.point-text { font-size: 13px; font-weight: 300; line-height: 1.6; color: var(--black); }
+
+/* ── ЕКРАН 9 ── */
+
+.faq-accordion { display: flex; flex-direction: column; border-top: 0.5px solid rgba(26,26,26,0.12); }
+.faq-item { border-bottom: 0.5px solid rgba(26,26,26,0.12); }
+
+.faq-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 14px; padding: 18px 0; cursor: pointer; user-select: none;
+}
+
+.faq-question { font-size: 14px; font-weight: 400; color: var(--black); line-height: 1.5; flex: 1; }
+.faq-header.active .faq-question { color: var(--burgundy); }
+
+.faq-icon {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 0.5px solid rgba(26,26,26,0.2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px; transition: transform 0.3s, border-color 0.3s;
+}
+
+.faq-header.active .faq-icon { transform: rotate(45deg); border-color: var(--burgundy); }
+
+.faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.faq-body.open { max-height: 300px; }
+
+.faq-answer { font-size: 13px; font-weight: 300; line-height: 1.75; color: var(--gray); padding-bottom: 18px; }
+
+/* ── ДАТА СТАРТУ ── */
+
+.start-date {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0.5px solid rgba(139,26,47,0.2);
+  border-radius: 2px;
+  padding: 5px 10px;
+  background: rgba(139,26,47,0.04);
+}
+
+.date-cta {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--gray);
+  text-align: center;
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+.date-cta span {
+  color: var(--burgundy);
+  font-weight: 500;
+}
+
+
+
+/* ── ТАЙМЕР ── */
+
+.timer-section {
+  padding: 40px 24px 48px;
+  background: var(--black);
+  text-align: center;
+}
+
+.timer-label {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 24px;
+}
+
+.timer-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.timer-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.timer-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 300;
+  color: white;
+  line-height: 1;
+  min-width: 72px;
+  text-align: center;
+}
+
+.timer-sep {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--burgundy);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.timer-caption {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.timer-section .cta-block { margin-top: 24px; }
+.timer-section .cta-block .btn { background: #C4354F; }
+.timer-section .price-old { color: rgba(255,255,255,0.4); }
+
+/* ── ПЛАВАЮЧА КНОПКА ── */
+
+.float-btn-wrap {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 390px;
+  z-index: 999;
+  transition: bottom 0.3s ease-in-out;
+}
+
+.float-btn-wrap.visible { bottom: 0; }
+
+.float-btn, a.float-btn {
+  width: 100%;
+  padding: 18px 24px;
+  background: var(--burgundy);
+  color: white;
+  border: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-shadow: 0 -4px 20px rgba(139,26,47,0.3);
+  text-decoration: none;
+}
+
+.footer { background: var(--black); padding: 32px 24px 88px; text-align: center; }
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 300; color: white;
+  letter-spacing: 0.08em; margin-bottom: 8px;
+}
+
+.footer-text { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.4); line-height: 1.6; }
+
+/* ══════════════════════════════════════
+   АДАПТИВ — ПЛАНШЕТ (768px+)
+══════════════════════════════════════ */
+
+@media (min-width: 768px) {
+  body {
+    max-width: 768px;
+  }
+
+  .section { padding: 56px 48px 64px; }
+
+  h1 { font-size: 64px; }
+  h2 { font-size: 52px; margin-bottom: 36px; }
+
+  /* Екран 1 */
+  .top-bar { padding: 20px 48px; }
+
+  .photo-block { height: 380px; }
+
+  .hero { padding: 40px 48px 0; }
+
+  .pain { font-size: 17px; }
+  .promise { font-size: 18px; }
+  .details { font-size: 16px; }
+
+  .btn { font-size: 16px; padding: 18px 32px; }
+  .price-old { font-size: 17px; }
+
+  /* Екран 2 */
+  .item-text { font-size: 16px; }
+  .not-text { font-size: 15px; }
+
+  /* Екран 3 — автор */
+  .photo-wrap { height: 500px; }
+
+  .stats { grid-template-columns: repeat(4, 1fr); }
+  .stat-num { font-size: 34px; }
+  .stat-label { font-size: 12px; }
+  .bio { font-size: 16px; }
+  .bio-highlight { font-size: 17px; }
+
+  /* Екран 4 — акордеон */
+  .acc-title { font-size: 16px; }
+  .acc-text { font-size: 14px; }
+  .acc-result { font-size: 14px; }
+  .acc-bonus { font-size: 13px; }
+
+  /* Екран 5 */
+  .step-title { font-size: 16px; }
+  .step-text { font-size: 15px; }
+  .highlight-text { font-size: 16px; }
+
+  /* Екран 6 */
+  .block-text { font-size: 15px; }
+  .budget-tag { font-size: 15px; }
+  .summary-text { font-size: 17px; }
+  .summary-text strong { font-size: 20px; }
+
+  /* Гарантія */
+  .guarantee-title { font-size: 20px; }
+  .guarantee-text { font-size: 16px; }
+  .point-text { font-size: 15px; }
+
+  /* FAQ */
+  .faq-question { font-size: 16px; }
+  .faq-answer { font-size: 15px; }
+
+  /* Таймер */
+  .timer-num { font-size: 72px; min-width: 90px; }
+  .timer-sep { font-size: 60px; }
+
+  /* Плаваюча кнопка */
+  .float-btn-wrap { max-width: 768px; }
+  .float-btn { font-size: 17px; padding: 20px 32px; }
+
+  /* Footer */
+  .footer-logo { font-size: 24px; }
+  .footer-text { font-size: 13px; }
+}
+
+/* ══════════════════════════════════════
+   АДАПТИВ — ДЕСКТОП (1024px+)
+══════════════════════════════════════ */
+
+@media (min-width: 1024px) {
+  body {
+    max-width: 1100px;
+    background: var(--cream);
+  }
+
+  .section { padding: 72px 80px 80px; }
+
+  h1 { font-size: 80px; }
+  h2 { font-size: 64px; margin-bottom: 40px; }
+
+  /* Топ-бар */
+  .top-bar { padding: 20px 80px; }
+
+  /* Екран 1 — двоколонковий layout */
+  .hero-desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+    padding: 56px 80px 0;
+  }
+
+  .photo-block {
+    height: 560px;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .hero {
+    padding: 56px 80px 0;
+  }
+
+  /* Екран 2 — двоколонковий */
+  .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+  }
+
+  .item:nth-child(1),
+  .item:nth-child(3),
+  .item:nth-child(5) {
+    border-right: 0.5px solid rgba(26,26,26,0.08);
+    padding-right: 32px;
+  }
+
+  /* Екран 3 — автор: фото і текст поруч */
+  .author-desktop {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .photo-wrap {
+    height: 100%;
+    min-height: 500px;
+  }
+
+  .author-content {
+    padding: 56px 80px;
+  }
+
+  /* Статистика в 2 рядки по 2 */
+  .stats { grid-template-columns: repeat(2, 1fr); }
+
+  /* Екран 4 — акордеон ширший */
+  .acc-inner { padding-left: 80px; }
+
+  /* Екран 5 — кроки в 2 колонки */
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 48px;
+  }
+
+  .step { padding-bottom: 32px; }
+
+  /* Екран 6 — до/після поруч */
+  .before-after-wrap {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    align-items: start;
+  }
+
+  .vs-divider {
+    flex-direction: column;
+    margin: 0 16px;
+    height: 100%;
+  }
+
+  .vs-line {
+    flex: 1;
+    width: 0.5px;
+    height: auto;
+  }
+
+  /* Таймер */
+  .timer-num { font-size: 88px; min-width: 110px; }
+  .timer-sep { font-size: 72px; }
+  .timer-section .cta-block { max-width: 480px; margin: 24px auto 0; }
+
+  /* FAQ — двоколонковий */
+  .faq-accordion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 48px;
+    border-top: none;
+  }
+
+  .faq-item {
+    border-top: 0.5px solid rgba(26,26,26,0.12);
+  }
+
+  /* Плаваюча кнопка */
+  .float-btn-wrap {
+    max-width: 480px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px 2px 0 0;
+    overflow: hidden;
+  }
+
+  .float-btn { font-size: 18px; padding: 22px 40px; }
+
+  /* Footer */
+  .footer { padding: 48px 80px 108px; }
+  .footer-logo { font-size: 28px; margin-bottom: 12px; }
+  .footer-text { font-size: 14px; }
+}
+
+/* ── БЛОК АВТОРА — базовий (мобіль) ── */
+
+.author-section {
+  display: block;
+}
+
+.author-photo-col .photo-wrap {
+  height: 420px;
+  overflow: hidden;
+  position: relative;
+}
+
+.author-photo-col .photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.author-text-col {
+  padding: 28px 24px 48px;
+}
+
+/* Планшет — фото трохи менше, текст ширший */
+@media (min-width: 768px) {
+  .author-photo-col .photo-wrap { height: 500px; }
+  .author-text-col { padding: 40px 48px 64px; }
+}
+
+/* Десктоп — дві колонки поруч */
+@media (min-width: 1024px) {
+  .author-section {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    align-items: stretch;
+    min-height: 600px;
+  }
+
+  .author-photo-col { overflow: hidden; }
+
+  .author-photo-col .photo-wrap {
+    height: 100%;
+    min-height: 600px;
+  }
+
+  .author-photo-col .photo-wrap .photo-overlay {
+    background: linear-gradient(to right, transparent, var(--cream));
+    top: 0; bottom: 0; right: 0;
+    width: 80px;
+    height: 100%;
+    left: auto;
+  }
+
+  .author-text-col {
+    padding: 56px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .author-text-col .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ЕКРАН 1 -->
+  <div class="top-bar">
+    <span class="top-tag">Міні-курс · 7 уроків</span>
+    <span class="top-price">11 € <span style="color:var(--gray);text-decoration:line-through;font-weight:300;font-size:12px">39 €</span></span>
+  </div>
+
+  <div class="photo-block">
+    <div class="photo-cell main">
+      <div class="photo-icon">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5" r="2.5" stroke="rgba(139,26,47,0.6)" stroke-width="1"/><path d="M2 12c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="rgba(139,26,47,0.6)" stroke-width="1" fill="none"/></svg>
+      </div>
+      <div class="photo-label-cell">Головне фото</div>
+    </div>
+    <div class="photo-cell">
+      <div class="photo-icon">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5" r="2.5" stroke="rgba(139,26,47,0.6)" stroke-width="1"/><path d="M2 12c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="rgba(139,26,47,0.6)" stroke-width="1" fill="none"/></svg>
+      </div>
+      <div class="photo-label-cell">Стиль 1</div>
+    </div>
+    <div class="photo-cell">
+      <div class="photo-icon">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5" r="2.5" stroke="rgba(139,26,47,0.6)" stroke-width="1"/><path d="M2 12c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="rgba(139,26,47,0.6)" stroke-width="1" fill="none"/></svg>
+      </div>
+      <div class="photo-label-cell">Стиль 2</div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-label">Нейрофотосесія для експерта</div>
+    <h1>Фото за<br>5 <em>хвилин</em></h1>
+    <div class="start-date">Старт: <span id="date-hero" style="color:var(--burgundy);font-weight:500;">завантаження...</span></div>
+    <div class="hero-divider"></div>
+    <p class="pain">Відкладаєш ведення блогу, бо немає гідного візуалу?</p>
+    <p class="promise">Уяви: щотижня нові портрети для стрічки — <strong>без студії, без фотографа, без дорогих підписок.</strong></p>
+    <p class="details">7 коротких уроків — і ти самостійно генеруєш нейрофото в ChatGPT, Seadart і Nana Banana. Платиш лише за ті фото, що потрібні — або взагалі безкоштовно.</p>
+    <div class="cta-block">
+      <a href="https://buy.stripe.com/test_bJecN7b6Igrjb3fc6x9k400" target="_blank" class="btn">Придбати за 11 €</a>
+      <span class="price-old">39 €</span>
+    </div>
+    <div class="date-cta">⏰ Старт <span id="date-cta">завантаження...</span> — встигни до опівночі</div>
+    <div class="guarantee-line">Гарантія повернення коштів протягом 14 днів, якщо не отримаєш результату.</div>
+  </div>
+
+  <div class="screen-divider"></div>
+
+  <!-- ЕКРАН 2 -->
+  <div class="section">
+    <div class="section-label">Аудиторія</div>
+    <h2>Курс для тебе,<br><em>якщо...</em></h2>
+    <div class="items">
+      <div class="item">
+        <div class="item-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#8B1A2F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="item-text">Ти експерт, підприємець або фрілансер — і соцмережі твій головний канал продажів</div>
+      </div>
+      <div class="item">
+        <div class="item-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#8B1A2F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="item-text">Ти SMM-спеціаліст і хочеш пропонувати клієнтам більше</div>
+      </div>
+      <div class="item">
+        <div class="item-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#8B1A2F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="item-text">Ведеш або плануєш вести блог — і хочеш гідний візуал без фотографа</div>
+      </div>
+      <div class="item">
+        <div class="item-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#8B1A2F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="item-text">Автор курсів або онлайн-викладач — тобі постійно потрібні фото для промо</div>
+      </div>
+      <div class="item">
+        <div class="item-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#8B1A2F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="item-text">Твій особистий бренд — це твій головний актив</div>
+      </div>
+    </div>
+    <div class="not-for">
+      <div class="not-label">Курс не для тих, хто</div>
+      <div class="not-item">
+        <div class="not-dash">—</div>
+        <div class="not-text">Вже добре володіє генеративними нейромережами</div>
+      </div>
+      <div class="not-item">
+        <div class="not-dash">—</div>
+        <div class="not-text">Шукає роботу з Photoshop або Midjourney — тут все простіше</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-divider"></div>
+
+  <!-- ЕКРАН 3 -->
+  <div class="author-section">
+    <div class="author-photo-col">
+      <div class="photo-wrap">
+        <img src="IMG_5171.JPG" alt="Марина Шабінська">
+        <div class="photo-overlay"></div>
+      </div>
+    </div>
+    <div class="author-text-col">
+      <div class="section-label">Про автора</div>
+      <h2>Марина<br><em>Шабінська</em></h2>
+      <div class="name-sub">AI-практик · Викладач · Автор курсу</div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">2011</div><div class="stat-label">Курс зі штучного інтелекту, Стенфорд</div></div>
+        <div class="stat"><div class="stat-num">12</div><div class="stat-label">Років викладання в НАУКМА та КНУ</div></div>
+        <div class="stat"><div class="stat-num">PhD</div><div class="stat-label">Дисертація по програмним агентам</div></div>
+        <div class="stat"><div class="stat-num">щодня</div><div class="stat-label">Використовую AI для власного блогу</div></div>
+      </div>
+      <p class="bio">Я практик з глибокою науковою базою в AI. Але головне — я сама щодня використовую нейромережі для власного блогу і знаю, які інструменти реально працюють, а які тільки забирають час і гроші.</p>
+      <p class="bio-highlight">Цей курс я створила, щоб ти отримала практичний результат — без зайвої теорії, без складних програм і без великого бюджету.</p>
+    </div>
+  </div>
+
+  <div class="screen-divider"></div>
+
+  <!-- ЕКРАН 4 -->
+  <div class="section">
+    <div class="section-label">Програма</div>
+    <h2>7 уроків —<br><em>7 кроків</em></h2>
+    <div class="accordion">
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-day">День 1</div>
+          <div class="acc-title">Вступ: що буде в міні-курсі</div>
+          <div class="acc-icon"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9" stroke="#1A1A1A" stroke-width="1"/><line x1="1" y1="5" x2="9" y2="5" stroke="#1A1A1A" stroke-width="1"/></svg></div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div><div class="acc-section-title">Наповнення</div><div class="acc-text">Огляд програми курсу. Які інструменти будемо використовувати. Що отримаєш на виході.</div></div>
+            <div class="divider-inner"></div>
+            <div class="acc-result">Розуміння плану і мотивація пройти курс</div>
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-day">День 2</div>
+          <div class="acc-title">Референси: чужі та власні фото</div>
+          <div class="acc-icon"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9" stroke="#1A1A1A" stroke-width="1"/><line x1="1" y1="5" x2="9" y2="5" stroke="#1A1A1A" stroke-width="1"/></svg></div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div><div class="acc-section-title">Наповнення</div><div class="acc-text">Як підбирати референси. Що добре працює, а що — ні. Власні фото для бази: кількість, ракурси, освітлення.</div></div>
+            <div class="divider-inner"></div>
+            <div class="acc-result">Готова папка референсів + відібрані власні фото для бази</div>
+            <div class="acc-bonus">Чекліст: ідеальне фото для бази</div>
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-day">День 3</div>
+          <div class="acc-title">Промпт для опису зображення</div>
+          <div class="acc-icon"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9" stroke="#1A1A1A" stroke-width="1"/><line x1="1" y1="5" x2="9" y2="5" stroke="#1A1A1A" stroke-width="1"/></svg></div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div><div class="acc-section-title">Наповнення</div><div class="acc-text">Структура промпту: зовнішність + стиль + атмосфера. Приклади хороших і поганих промптів.</div></div>
+            <div class="divider-inner"></div>
+            <div class="acc-result">Готовий промпт під свій тип зовнішності</div>
+            <div class="acc-bonus">Кастомний GPT: скидаєш фото — отримуєш промпт</div>
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-day">День 4</div>
+          <div class="acc-title">Створення зображень у ChatGPT</div>
+          <div class="acc-icon"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9" stroke="#1A1A1A" stroke-width="1"/><line x1="1" y1="5" x2="9" y2="5" stroke="#1A1A1A" stroke-width="1"/></svg></div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div><div class="acc-section-title">Наповнення</div><div class="acc-text">Покроковий запуск у ChatGPT. Переваги: простота, швидкість. Недоліки: менший контроль, вартість.</div></div>
+            <div class="divider-inner"></div>
+            <div class="acc-result">Перші згенеровані портрети</div>
+            <div class="acc-bonus">10 готових промптів для ділової фотосесії</div>
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-day">День 5</div>
+          <div class="acc-title">Replicate + Seadart</div>
+          <div class="acc-icon"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9" stroke="#1A1A1A" stroke-width="1"/><line x1="1" y1="5" x2="9" y2="5" stroke="#1A1A1A" stroke-width="1"/></svg></div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div><div class="acc-section-title">Наповнення</div><div class="acc-text">Реєстрація на Replicate. Інтерфейс, логіка credits. Запуск Seadart. Генерація портретів.</div></div>
+            <div class="divider-inner"></div>
+            <div class="acc-result">Портрети у стилі Seadart</div>
+            <div class="acc-bonus">Шпаргалка параметрів Seadart</div>
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-day">День 6</div>
+          <div class="acc-title">Nana Banana</div>
+          <div class="acc-icon"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9" stroke="#1A1A1A" stroke-width="1"/><line x1="1" y1="5" x2="9" y2="5" stroke="#1A1A1A" stroke-width="1"/></svg></div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div><div class="acc-section-title">Наповнення</div><div class="acc-text">Запуск Nana Banana через Replicate. Налаштування параметрів. Генерація портретів.</div></div>
+            <div class="divider-inner"></div>
+            <div class="acc-result">Портрети у стилі Nana Banana</div>
+            <div class="acc-bonus">Шпаргалка параметрів Nana Banana</div>
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-day">День 7</div>
+          <div class="acc-title">Висновки та підсумки</div>
+          <div class="acc-icon"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9" stroke="#1A1A1A" stroke-width="1"/><line x1="1" y1="5" x2="9" y2="5" stroke="#1A1A1A" stroke-width="1"/></svg></div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div><div class="acc-section-title">Наповнення</div><div class="acc-text">Порівняння інструментів. Один промпт → результати в ChatGPT, Seadart і Nana Banana. Як відібрати фінальні 9 фото для стрічки.</div></div>
+            <div class="divider-inner"></div>
+            <div class="acc-result">9 відібраних зображень + розуміння коли який інструмент обирати</div>
+            <div class="acc-bonus">Бот, який за твоїми референсами будує 10 зображень у Nana Banana безкоштовно</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-divider"></div>
+
+  <!-- ЕКРАН 5 -->
+  <div class="section">
+    <div class="section-label">Як це працює</div>
+    <h2>Просто,<br><em>зручно,</em> онлайн</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
+        <div class="step-content"><div class="step-title">Одразу після оплати</div><div class="step-text">Ти отримуєш доступ до 7 міні-уроків з відео. Платформа відкрита 24/7 — дивись коли зручно.</div></div>
+      </div>
+      <div class="step">
+        <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
+        <div class="step-content"><div class="step-title">Кожен урок — це практика</div><div class="step-text">Практичне завдання, бонуси та додаткові матеріали в кожному уроці. Одразу застосовуєш знання.</div></div>
+      </div>
+      <div class="step">
+        <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
+        <div class="step-content"><div class="step-title">2 місяці доступу</div><div class="step-text">Рухайся у власному темпі. Повертайся до уроків скільки потрібно.</div></div>
+      </div>
+      <div class="step">
+        <div class="step-left"><div class="step-num">4</div></div>
+        <div class="step-content"><div class="step-title">Результат — 9 готових фото</div><div class="step-text">Після курсу у тебе є стрічка, яка працює на твій особистий бренд.</div></div>
+      </div>
+    </div>
+    <div class="highlight-block">
+      <div class="highlight-text">Придбавши цей курс, ти спростиш собі шлях до розвитку блогу і побудови власного бренду. Не зволікай — зроби перший крок вже сьогодні.</div>
+    </div>
+    <div class="cta-block">
+      <a href="https://buy.stripe.com/test_bJecN7b6Igrjb3fc6x9k400" target="_blank" class="btn">Придбати за 11 €</a>
+      <span class="price-old">39 €</span>
+    </div>
+  </div>
+
+  <div class="screen-divider"></div>
+
+  <!-- ЕКРАН 6 -->
+  <div class="section">
+    <div class="section-label">Результати</div>
+    <h2>До і <em>після</em><br>курсу</h2>
+    <div class="block">
+      <div class="block-header before"><div class="block-tag">До</div><div class="block-title">Традиційна фотосесія</div></div>
+      <div class="block-body">
+        <div class="block-item"><div class="block-icon">—</div><div class="block-text">Знайти і оплатити фотографа</div></div>
+        <div class="block-item"><div class="block-icon">—</div><div class="block-text">Орендувати студію</div></div>
+        <div class="block-item"><div class="block-icon">—</div><div class="block-text">Записатись до візажиста і перукаря</div></div>
+        <div class="block-item"><div class="block-icon">—</div><div class="block-text">Зробити манікюр</div></div>
+        <div class="block-item"><div class="block-icon">—</div><div class="block-text">Купити або підібрати одяг під концепцію</div></div>
+        <div class="block-item"><div class="block-icon">—</div><div class="block-text">Придумати концепцію і локації</div></div>
+        <div class="block-item"><div class="block-icon">—</div><div class="block-text">Витратити цілий день</div></div>
+        <div class="budget-tag">Від <span>150 до 500 €</span> — і повторювати кожні 1–2 місяці</div>
+      </div>
+    </div>
+    <div class="vs-divider"><div class="vs-line"></div><div class="vs-text">або</div><div class="vs-line"></div></div>
+    <div class="block">
+      <div class="block-header after"><div class="block-tag">Після</div><div class="block-title">Нейрофотосесія за 5 хвилин</div></div>
+      <div class="block-body">
+        <div class="block-item"><div class="block-icon check">✓</div><div class="block-text">Відкриваєш телефон або ноутбук</div></div>
+        <div class="block-item"><div class="block-icon check">✓</div><div class="block-text">За 5 хвилин генеруєш новий портрет</div></div>
+        <div class="block-item"><div class="block-icon check">✓</div><div class="block-text">Різні образи, стилі, локації — без виходу з дому</div></div>
+        <div class="block-item"><div class="block-icon check">✓</div><div class="block-text">Платиш лише за ті фото що потрібні — або взагалі безкоштовно</div></div>
+        <div class="block-item"><div class="block-icon check">✓</div><div class="block-text">Стрічка завжди свіжа і професійна</div></div>
+      </div>
+    </div>
+    <div class="summary"><div class="summary-text"><strong>Готово за хвилини.</strong> Без фотографа. Без студії. Без стресу.</div></div>
+  </div>
+
+  <div class="screen-divider"></div>
+
+  <!-- ЕКРАН 8 -->
+  <div class="section">
+    <div class="section-label">Гарантія</div>
+    <h2>Твій ризик —<br><em>нульовий</em></h2>
+    <div class="guarantee-block">
+      <div class="guarantee-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3L4 7v5c0 5 3.8 9.7 8 10.9 4.2-1.2 8-5.9 8-10.9V7L12 3z" stroke="#8B1A2F" stroke-width="1.2" fill="none"/><path d="M8.5 12l2.5 2.5 4.5-4.5" stroke="#8B1A2F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="guarantee-title">Повернення коштів протягом <span>14 днів</span></div>
+      <div class="guarantee-text">Якщо протягом 14 днів після придбання ти зрозумієш, що курс не відповідає твоїм очікуванням — просто напиши нам. Ми повернемо кошти без зайвих питань.</div>
+      <div class="g-divider"></div>
+      <div class="points">
+        <div class="point"><div class="point-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#8B1A2F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="point-text">Не потрібно пояснювати причину</div></div>
+        <div class="point"><div class="point-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#8B1A2F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="point-text">Повернення через Stripe — швидко і безпечно</div></div>
+        <div class="point"><div class="point-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#8B1A2F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="point-text">Ми впевнені в якості курсу — тому і даємо гарантію</div></div>
+      </div>
+    </div>
+    <div class="cta-block">
+      <a href="https://buy.stripe.com/test_bJecN7b6Igrjb3fc6x9k400" target="_blank" class="btn">Придбати за 11 €</a>
+      <span class="price-old">39 €</span>
+    </div>
+    <div class="fine-print">Після оплати ти одразу отримуєш доступ до всіх 7 уроків</div>
+  </div>
+
+  <div class="screen-divider"></div>
+
+  <!-- ТАЙМЕР -->
+  <div class="timer-section">
+    <div class="timer-label">Спеціальна ціна діє ще</div>
+    <div class="timer-wrap">
+      <div class="timer-unit">
+        <div class="timer-num" id="timer-hours">03</div>
+        <div class="timer-caption">годин</div>
+      </div>
+      <div class="timer-sep">:</div>
+      <div class="timer-unit">
+        <div class="timer-num" id="timer-minutes">00</div>
+        <div class="timer-caption">хвилин</div>
+      </div>
+      <div class="timer-sep">:</div>
+      <div class="timer-unit">
+        <div class="timer-num" id="timer-seconds">00</div>
+        <div class="timer-caption">секунд</div>
+      </div>
+    </div>
+    <div class="cta-block" style="margin-top: 24px;">
+      <a href="https://buy.stripe.com/test_bJecN7b6Igrjb3fc6x9k400" target="_blank" class="btn">Придбати за 11 €</a>
+      <span class="price-old">39 €</span>
+    </div>
+  </div>
+
+  <div class="screen-divider"></div>
+
+  <!-- ЕКРАН 9 -->
+  <div class="section">
+    <div class="section-label">FAQ</div>
+    <h2>Питання<br>і <em>відповіді</em></h2>
+    <div class="faq-accordion">
+      <div class="faq-item">
+        <div class="faq-header" onclick="toggleFaq(this)">
+          <div class="faq-question">Чому я просто не можу згенерувати фото сама в ChatGPT?</div>
+          <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9" stroke="#1A1A1A" stroke-width="1"/><line x1="1" y1="5" x2="9" y2="5" stroke="#1A1A1A" stroke-width="1"/></svg></div>
+        </div>
+        <div class="faq-body"><div class="faq-answer">Можеш — але без правильної підготовки бази фото, референсів і промптів результат буде випадковим. Курс дає систему, яка працює стабільно і дає передбачуваний результат щоразу.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header" onclick="toggleFaq(this)">
+          <div class="faq-question">Чи потрібні мені підписки на інші програми?</div>
+          <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9" stroke="#1A1A1A" stroke-width="1"/><line x1="1" y1="5" x2="9" y2="5" stroke="#1A1A1A" stroke-width="1"/></svg></div>
+        </div>
+        <div class="faq-body"><div class="faq-answer">Ні. Ми працюємо через одну платформу Replicate, де зібрані всі інструменти. Не потрібно окремо платити за Midjourney, Adobe чи інші сервіси.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header" onclick="toggleFaq(this)">
+          <div class="faq-question">Скільки буде коштувати генерація одного фото?</div>
+          <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9" stroke="#1A1A1A" stroke-width="1"/><line x1="1" y1="5" x2="9" y2="5" stroke="#1A1A1A" stroke-width="1"/></svg></div>
+        </div>
+        <div class="faq-body"><div class="faq-answer">Від кількох центів до безкоштовно — залежно від інструменту. У курсі я показую як отримати перші фото взагалі без витрат.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header" onclick="toggleFaq(this)">
+          <div class="faq-question">Я вже пробувала — вийшло 3 руки і одна нога. Чи гарантуєте ви результат?</div>
+          <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9" stroke="#1A1A1A" stroke-width="1"/><line x1="1" y1="5" x2="9" y2="5" stroke="#1A1A1A" stroke-width="1"/></svg></div>
+        </div>
+        <div class="faq-body"><div class="faq-answer">Саме тому існує цей курс 😊 Проблема не в нейромережі — а в тому, як підготовлені вихідні фото і написаний промпт. Після курсу ти знатимеш як цього уникнути. А якщо протягом 14 днів результат тебе не задовольнить — повернемо кошти.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header" onclick="toggleFaq(this)">
+          <div class="faq-question">Я гуманітарій, і ШІ звучить дуже складно. Чи впораюсь я?</div>
+          <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9" stroke="#1A1A1A" stroke-width="1"/><line x1="1" y1="5" x2="9" y2="5" stroke="#1A1A1A" stroke-width="1"/></svg></div>
+        </div>
+        <div class="faq-body"><div class="faq-answer">Так. Курс створений саме для тих, хто не є технічним спеціалістом. Жодного коду, жодних складних налаштувань — тільки покрокові дії з конкретним результатом.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header" onclick="toggleFaq(this)">
+          <div class="faq-question">Чи буду я схожа на саму себе на згенерованих фото?</div>
+          <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9" stroke="#1A1A1A" stroke-width="1"/><line x1="1" y1="5" x2="9" y2="5" stroke="#1A1A1A" stroke-width="1"/></svg></div>
+        </div>
+        <div class="faq-body"><div class="faq-answer">Так — якщо правильно підготувати базу власних фото. Саме цьому присвячений окремий урок курсу. Нейромережа вчиться на твоїх фото і генерує саме тебе — в різних образах і локаціях.</div></div>
+      </div>
+    </div>
+    <div class="cta-block" style="margin-top: 36px;">
+      <a href="https://buy.stripe.com/test_bJecN7b6Igrjb3fc6x9k400" target="_blank" class="btn">Придбати за 11 €</a>
+      <span class="price-old">39 €</span>
+    </div>
+    <div class="fine-print">Після оплати ти одразу отримуєш доступ до всіх 7 уроків</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">Марина Шабінська</div>
+    <div class="footer-text">© 2026 · Фото за 5 хвилин<br>нейрофотосесія для експерта</div>
+  </div>
+
+  <!-- ПЛАВАЮЧА КНОПКА -->
+  <div class="float-btn-wrap" id="float-btn">
+    <a href="https://buy.stripe.com/test_bJecN7b6Igrjb3fc6x9k400" target="_blank" class="float-btn">Придбати за 11 € <span style="text-decoration:line-through;opacity:0.6;font-size:13px;margin-left:8px;">39 €</span></a>
+  </div>
+
+  <script>
+// ── ДИНАМІЧНА ДАТА СТАРТУ ──
+
+function getMonthName(monthIndex) {
+  var months = [
+    'січня', 'лютого', 'березня', 'квітня', 'травня', 'червня',
+    'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'
+  ];
+  return months[monthIndex];
+}
+
+function updateStartDate() {
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  var day = tomorrow.getDate();
+  var month = getMonthName(tomorrow.getMonth());
+  var formatted = day + ' ' + month;
+
+  var heroDate = document.getElementById('date-hero');
+  var ctaDate = document.getElementById('date-cta');
+
+  if (heroDate) heroDate.textContent = formatted;
+  if (ctaDate) ctaDate.textContent = formatted;
+}
+
+updateStartDate();
+setInterval(updateStartDate, 60000);
+
+// ── ТАЙМЕР ЗВОРОТНОГО ВІДЛІКУ (3 години) ──
+
+var timerEnd = new Date(new Date().getTime() + 3 * 60 * 60 * 1000);
+
+function updateTimer() {
+  var now = new Date();
+  var remaining = timerEnd - now;
+
+  if (remaining <= 0) {
+    document.getElementById('timer-hours').textContent = '00';
+    document.getElementById('timer-minutes').textContent = '00';
+    document.getElementById('timer-seconds').textContent = '00';
+    return;
+  }
+
+  var hours = Math.floor(remaining / (1000 * 60 * 60));
+  var minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+  document.getElementById('timer-hours').textContent = hours.toString().padStart(2, '0');
+  document.getElementById('timer-minutes').textContent = minutes.toString().padStart(2, '0');
+  document.getElementById('timer-seconds').textContent = seconds.toString().padStart(2, '0');
+}
+
+updateTimer();
+setInterval(updateTimer, 1000);
+
+// ── ПЛАВАЮЧА КНОПКА ──
+
+var floatBtn = document.getElementById('float-btn');
+var scrollThreshold = 400;
+
+function handleScroll() {
+  if (window.pageYOffset > scrollThreshold) {
+    floatBtn.classList.add('visible');
+  } else {
+    floatBtn.classList.remove('visible');
+  }
+}
+
+window.addEventListener('scroll', handleScroll);
+
+// ── АКОРДЕОН ПРОГРАМИ (Дні 1-7) ──
+
+
+function toggleAcc(header) {
+  const body = header.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+
+  // Закриваємо всі відкриті
+  document.querySelectorAll('.acc-body').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.acc-header').forEach(h => h.classList.remove('active'));
+
+  // Відкриваємо поточний якщо він був закритий
+  if (!isOpen) {
+    body.classList.add('open');
+    header.classList.add('active');
+  }
+}
+
+// ── АКОРДЕОН FAQ ──
+
+function toggleFaq(header) {
+  const body = header.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+
+  // Закриваємо всі відкриті
+  document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.faq-header').forEach(h => h.classList.remove('active'));
+
+  // Відкриваємо поточний якщо він був закритий
+  if (!isOpen) {
+    body.classList.add('open');
+    header.classList.add('active');
+  }
+}
+
+</script>
+</body>
+</html>

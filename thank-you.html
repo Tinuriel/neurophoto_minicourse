@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дякуємо за покупку · Фото за 5 хвилин</title>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '871716678655650');
+fbq('track', 'PageView');
+fbq('track', 'Purchase', {value: 11.00, currency: 'EUR'});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=871716678655650&ev=Purchase&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<link rel="stylesheet" href="style.css">
+<style>
+  .ty-wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ty-main {
+    flex: 1;
+    padding: 56px 24px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ty-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 1px solid rgba(139,26,47,0.3);
+    background: rgba(139,26,47,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+
+  .ty-label {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ty-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 0.5px;
+    background: var(--burgundy);
+  }
+
+  .ty-label::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 0.5px;
+    background: var(--burgundy);
+  }
+
+  .ty-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--black);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .ty-title em {
+    font-style: italic;
+    color: var(--burgundy);
+  }
+
+  .ty-subtitle {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--gray);
+    margin-bottom: 40px;
+    max-width: 320px;
+  }
+
+  .ty-divider {
+    width: 40px;
+    height: 0.5px;
+    background: rgba(26,26,26,0.15);
+    margin: 0 auto 40px;
+  }
+
+  .ty-steps {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: rgba(26,26,26,0.1);
+    border: 0.5px solid rgba(26,26,26,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+
+  .ty-step {
+    background: var(--white);
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .ty-step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 0.5px solid var(--burgundy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--burgundy);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .ty-step-content {}
+
+  .ty-step-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+
+  .ty-step-text {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--gray);
+  }
+
+  .ty-step-text a {
+    color: var(--burgundy);
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  .ty-step-text a:hover {
+    text-decoration: underline;
+  }
+
+  .ty-btn-wrap {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .ty-btn-back {
+    display: block;
+    width: 100%;
+    padding: 15px 24px;
+    background: var(--cream);
+    color: var(--black);
+    border: 0.5px solid rgba(26,26,26,0.2);
+    border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .ty-btn-back:hover {
+    background: rgba(26,26,26,0.05);
+  }
+
+  /* Планшет */
+  @media (min-width: 768px) {
+    .ty-main { padding: 80px 48px 64px; }
+    .ty-title { font-size: 56px; }
+    .ty-subtitle { font-size: 16px; max-width: 400px; }
+  }
+
+  /* Десктоп */
+  @media (min-width: 1024px) {
+    .ty-main { padding: 100px 80px 80px; max-width: 640px; margin: 0 auto; }
+    .ty-title { font-size: 64px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ty-wrap">
+
+  <!-- ТОП-БАР -->
+  <div class="top-bar">
+    <span class="top-tag">Фото за 5 хвилин</span>
+    <span class="top-price" style="color:var(--gray);font-weight:300;">Нейрофотосесія для експерта</span>
+  </div>
+
+  <!-- ГОЛОВНИЙ БЛОК -->
+  <div class="ty-main">
+
+    <div class="ty-icon">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M6 16l7 7 13-13" stroke="#8B1A2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <div class="ty-label" style="font-size:20px;letter-spacing:0.07em;">Оплата підтверджена</div>
+
+    <h1 class="ty-title">Дякую<br>за <em>довіру!</em></h1>
+
+    <p class="ty-subtitle" style="font-size:30px;line-height:1.4;">Твоя покупка успішно оформлена. Ось що відбудеться далі:</p>
+
+    <div class="ty-divider"></div>
+
+    <div style="width:100%;margin-bottom:32px;text-align:left;display:flex;flex-direction:column;gap:20px;">
+
+      <p style="font-size:26px;font-weight:300;line-height:1.6;color:var(--black);">
+        Протягом 24 годин ти отримаєш перший урок у Telegram-боті <a href="https://t.me/Course_AI_foto_bot" target="_blank" style="color:#1a73e8;text-decoration:none;">https://t.me/Course_AI_foto_bot</a>. Щодня отримуватимеш новий урок. Доступ до всіх матеріалів зберігається 2 місяці.
+      </p>
+
+      <p style="font-size:26px;font-weight:300;line-height:1.6;color:var(--black);">
+        Є питання? Пиши в Telegram:<br>
+        <a href="https://t.me/MarynaShabinska" target="_blank" style="color:#1a73e8;text-decoration:none;">https://t.me/MarynaShabinska</a>
+      </p>
+
+    </div>
+
+    <div class="ty-btn-wrap">
+      <a href="index.html" class="ty-btn-back">← Повернутись на головну</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">Марина Шабінська</div>
+    <div class="footer-text">© 2026 · Фото за 5 хвилин · нейрофотосесія для експерта</div>
+    <div class="footer-links">
+      <a href="oferta.html">Договір оферти</a>
+      <span>·</span>
+      <a href="privacy.html">Політика конфіденційності</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

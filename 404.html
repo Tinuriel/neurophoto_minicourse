@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сторінку не знайдено · Фото за 5 хвилин</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .wrap-404 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-404 {
+    flex: 1;
+    padding: 64px 24px 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .num-404 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--black);
+    margin-bottom: 4px;
+    position: relative;
+  }
+
+  .num-404 em {
+    font-style: italic;
+    color: var(--burgundy);
+  }
+
+  .label-404 {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .label-404::before,
+  .label-404::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 0.5px;
+    background: var(--burgundy);
+  }
+
+  .title-404 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--black);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .title-404 em {
+    font-style: italic;
+    color: var(--burgundy);
+  }
+
+  .sub-404 {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--gray);
+    margin-bottom: 40px;
+    max-width: 300px;
+  }
+
+  .divider-404 {
+    width: 40px;
+    height: 0.5px;
+    background: rgba(26,26,26,0.12);
+    margin: 0 auto 40px;
+  }
+
+  .btn-404 {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    padding: 15px 24px;
+    background: var(--burgundy);
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-bottom: 14px;
+  }
+
+  .btn-404:hover { opacity: 0.85; }
+
+  .btn-404-ghost {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    padding: 15px 24px;
+    background: transparent;
+    color: var(--black);
+    border: 0.5px solid rgba(26,26,26,0.2);
+    border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .btn-404-ghost:hover { background: rgba(26,26,26,0.04); }
+
+  /* Планшет */
+  @media (min-width: 768px) {
+    .main-404 { padding: 88px 48px 72px; }
+    .num-404 { font-size: 160px; }
+    .title-404 { font-size: 48px; }
+    .sub-404 { font-size: 15px; max-width: 360px; }
+  }
+
+  /* Десктоп */
+  @media (min-width: 1024px) {
+    .main-404 { padding: 112px 80px 88px; max-width: 640px; margin: 0 auto; }
+    .num-404 { font-size: 200px; }
+    .title-404 { font-size: 56px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap-404">
+
+  <!-- ТОП-БАР -->
+  <div class="top-bar">
+    <span class="top-tag">Фото за 5 хвилин</span>
+    <span class="top-price" style="color:var(--gray);font-weight:300;">Нейрофотосесія для експерта</span>
+  </div>
+
+  <!-- ГОЛОВНИЙ БЛОК -->
+  <div class="main-404">
+
+    <div class="num-404">4<em>0</em>4</div>
+
+    <div class="label-404">сторінку не знайдено</div>
+
+    <h1 class="title-404">Схоже, ця<br>сторінка <em>зникла</em></h1>
+
+    <p class="sub-404">Можливо, посилання застаріло або сторінку було переміщено. Але твої нейрофото нікуди не поділись — повернись на головну.</p>
+
+    <div class="divider-404"></div>
+
+    <a href="index.html" class="btn-404">← Повернутись на головну</a>
+    <a href="mailto:info@marinashabinska.com" class="btn-404-ghost">Написати нам</a>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">Марина Шабінська</div>
+    <div class="footer-text">© 2026 · Фото за 5 хвилин · нейрофотосесія для експерта</div>
+    <div class="footer-links">
+      <a href="oferta.html">Договір оферти</a>
+      <span>·</span>
+      <a href="privacy.html">Політика конфіденційності</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

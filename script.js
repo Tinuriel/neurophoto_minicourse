@@ -169,3 +169,59 @@ function toggleFaq(header) {
   // Recalc on resize
   window.addEventListener('resize', () => goTo(current));
 })();
+
+// ── UMAMI: ТРЕКІНГ ПЕРЕГЛЯДУ СЕКЦІЙ ──
+
+document.addEventListener("DOMContentLoaded", function () {
+  const sectionsToTrack = [
+    "hero",
+    "gallery",
+    "audience",
+    "author",
+    "program",
+    "how-it-works",
+    "results",
+    "pricing",
+    "timer",
+    "faq",
+    "footer"
+  ];
+
+  // Фіксуємо, які секції вже були відправлені за цей візит
+  const triggeredSections = {};
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5 // секція вважається видимою, якщо 50% її площі на екрані
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const sectionId = entry.target.id;
+
+      if (entry.isIntersecting && !triggeredSections[sectionId]) {
+        // Затримка 1.5 сек — щоб не фіксувати швидке гортання
+        setTimeout(() => {
+          const freshRecords = observer.takeRecords().find(e => e.target.id === sectionId);
+          const stillVisible = freshRecords ? freshRecords.isIntersecting : entry.isIntersecting;
+
+          if (stillVisible && !triggeredSections[sectionId] && window.umami) {
+            triggeredSections[sectionId] = true;
+            umami.track("Section View", { section_name: sectionId });
+            console.log(`Umami → Section View: ${sectionId}`);
+          }
+        }, 1500);
+      }
+    });
+  }, observerOptions);
+
+  sectionsToTrack.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      observer.observe(el);
+    } else {
+      console.warn(`Umami: секцію #${id} не знайдено в DOM`);
+    }
+  });
+});

@@ -103,19 +103,17 @@ h2 em { font-style: italic; color: var(--burgundy); }
 .hero { padding: 28px 24px 0; }
 
 .hero-label {
-  font-size: 10px; font-weight: 400; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--burgundy);
-  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
-}
-
-.hero-label::before {
-  content: ''; display: inline-block; width: 20px; height: 0.5px; background: var(--burgundy);
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--burgundy); color: var(--cream);
+  font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 7px 14px; border-radius: 3px;
+  margin-bottom: 16px;
 }
 
 h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 46px; font-weight: 300; line-height: 1.05;
-  color: var(--black); margin-bottom: 20px; letter-spacing: -0.01em;
+  font-size: 52px; font-weight: 300; line-height: 1.02;
+  color: var(--black); margin-bottom: 20px; letter-spacing: -0.015em;
 }
 
 h1 em { font-style: italic; color: var(--burgundy); }

@@ -118,6 +118,13 @@ h1 {
 
 h1 em { font-style: italic; color: var(--burgundy); }
 
+.hero-subline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px; font-weight: 400; font-style: italic;
+  line-height: 1.4; color: var(--black);
+  margin-bottom: 18px;
+}
+
 .hero-divider { width: 100%; height: 0.5px; background: rgba(26,26,26,0.12); margin-bottom: 20px; }
 
 .pain { font-size: 15px; font-weight: 300; line-height: 1.65; color: var(--gray); margin-bottom: 14px; }
@@ -163,6 +170,39 @@ h1 em { font-style: italic; color: var(--burgundy); }
 .not-item:last-child { margin-bottom: 0; }
 .not-dash { font-size: 13px; color: var(--gray); flex-shrink: 0; margin-top: 2px; }
 .not-text { font-size: 13px; font-weight: 300; line-height: 1.55; color: var(--gray); }
+
+/* ── ЕКРАН 2.5: НЕ КУРС ДЛЯ AI-КРЕАТОРІВ ── */
+
+.focus-section { background: var(--white); }
+
+.focus-text {
+  font-size: 15px; font-weight: 300; line-height: 1.65;
+  color: var(--gray); margin-bottom: 24px;
+}
+
+.focus-compare {
+  display: flex; flex-direction: column; gap: 16px;
+}
+
+.focus-col {
+  background: var(--cream); border-radius: 4px; padding: 18px 20px;
+  border-left: 2px solid var(--burgundy);
+}
+
+.focus-col-label {
+  font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--burgundy); margin-bottom: 8px;
+}
+
+.focus-col-text {
+  font-size: 13px; font-weight: 300; line-height: 1.6; color: var(--black);
+}
+
+@media (min-width: 640px) {
+  .focus-compare { flex-direction: row; gap: 20px; }
+  .focus-col { flex: 1; }
+}
 
 /* ── ЕКРАН 3 ── */
 

@@ -45,6 +45,7 @@ src="https://www.facebook.com/tr?id=871716678655650&ev=PageView&noscript=1"
   <div class="hero" id="hero">
     <div class="hero-label">Нейрофото для блогу</div>
     <h1>Створи стрічку<br>за допомогою <em>AI</em></h1>
+    <p class="hero-subline">Не окремі фото — а стрічка, де кожен кадр гармонує з іншим. Один стиль, один настрій, 12 фото, які виглядають як єдине ціле.</p>
     <div class="start-date">Доступ — одразу після оплати</div>
     <div class="hero-divider"></div>
     <p class="pain">Твій геніальний пост ніхто не прочитає без гарного візуалу.</p>
@@ -178,6 +179,25 @@ src="https://www.facebook.com/tr?id=871716678655650&ev=PageView&noscript=1"
       <div class="not-item">
         <div class="not-dash">—</div>
         <div class="not-text">Очікує, що обличчя на фото буде 1 в 1 як у житті, і що ніхто ніколи не здогадається, що це нейрофото</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-divider"></div>
+
+  <!-- ЕКРАН 2.5: НЕ КУРС ДЛЯ AI-КРЕАТОРІВ -->
+  <div class="section focus-section" id="focus">
+    <div class="section-label">Важливо розуміти</div>
+    <h2>Це курс<br>не про <em>AI</em>, а про <em>стрічку</em></h2>
+    <p class="focus-text">Це не курс для AI-креаторів з купою концепцій, моделей і нюансів, які тобі не потрібні. Це курс для тих, хто хоче гарну стрічку в Instagram — і більше нічого зайвого.</p>
+    <div class="focus-compare">
+      <div class="focus-col">
+        <div class="focus-col-label">Складніше</div>
+        <div class="focus-col-text">Реалістичні фото генерувати важче, ніж фантастичні — нейромережа має зберегти саме твоє обличчя, а не намалювати щось приблизно схоже.</div>
+      </div>
+      <div class="focus-col">
+        <div class="focus-col-label">Простіше</div>
+        <div class="focus-col-text">Але тобі не потрібно вчити купу інструментів і підходів. Лише те, що працює для однієї задачі — твоєї стрічки.</div>
       </div>
     </div>
   </div>
@@ -405,41 +425,6 @@ src="https://www.facebook.com/tr?id=871716678655650&ev=PageView&noscript=1"
       <span class="price-old">39 €</span>
     </div>
   </div>
-
-  <script>
-    (function() {
-      function getDeadline() {
-        var now = new Date();
-        var kyivOffsetMs = 3 * 60 * 60 * 1000; // EEST, UTC+3
-        var kyivNow = new Date(now.getTime() + kyivOffsetMs - (now.getTimezoneOffset() * 60000));
-        var daysUntilSunday = (7 - kyivNow.getDay()) % 7;
-        var deadline = new Date(kyivNow);
-        deadline.setDate(kyivNow.getDate() + daysUntilSunday);
-        deadline.setHours(23, 59, 59, 0);
-        return deadline;
-      }
-      var deadline = getDeadline();
-      function pad(n) { return String(n).padStart(2, '0'); }
-      function tick() {
-        var now = new Date();
-        var kyivOffsetMs = 3 * 60 * 60 * 1000;
-        var kyivNow = new Date(now.getTime() + kyivOffsetMs - (now.getTimezoneOffset() * 60000));
-        var diff = deadline - kyivNow;
-        if (diff < 0) diff = 0;
-        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        var minutes = Math.floor((diff / (1000 * 60)) % 60);
-        var dEl = document.getElementById('timer-days');
-        var hEl = document.getElementById('timer-hours');
-        var mEl = document.getElementById('timer-minutes');
-        if (dEl) dEl.textContent = pad(days);
-        if (hEl) hEl.textContent = pad(hours);
-        if (mEl) mEl.textContent = pad(minutes);
-      }
-      tick();
-      setInterval(tick, 30000);
-    })();
-  </script>
 
   <div class="screen-divider"></div>
 

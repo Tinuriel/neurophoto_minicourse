@@ -204,6 +204,47 @@ src="https://www.facebook.com/tr?id=871716678655650&ev=Purchase&noscript=1"
     background: rgba(26,26,26,0.05);
   }
 
+  .ty-btn-primary {
+    display: block;
+    width: 100%;
+    padding: 16px 24px;
+    background: var(--burgundy);
+    color: var(--cream);
+    border: none;
+    border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .ty-btn-primary:hover {
+    opacity: 0.88;
+  }
+
+  .ty-btn-pulse {
+    box-shadow: 0 0 0 0 rgba(139,26,47,0.45);
+    animation: ty-pulse 2.2s infinite;
+  }
+
+  @keyframes ty-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(139,26,47,0.45); }
+    70%  { box-shadow: 0 0 0 12px rgba(139,26,47,0); }
+    100% { box-shadow: 0 0 0 0 rgba(139,26,47,0); }
+  }
+
+  .ty-btn-hint {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--gray);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
   /* Планшет */
   @media (min-width: 768px) {
     .ty-main { padding: 80px 48px 64px; }
@@ -225,7 +266,7 @@ src="https://www.facebook.com/tr?id=871716678655650&ev=Purchase&noscript=1"
   <!-- ТОП-БАР -->
   <div class="top-bar">
     <span class="top-tag">Фото за 5 хвилин</span>
-    <span class="top-price" style="color:var(--gray);font-weight:300;">Нейрофотосесія для експерта</span>
+    <span class="top-price" style="color:var(--gray);font-weight:300;">Замовлення оплачено</span>
   </div>
 
   <!-- ГОЛОВНИЙ БЛОК -->
@@ -241,20 +282,40 @@ src="https://www.facebook.com/tr?id=871716678655650&ev=Purchase&noscript=1"
 
     <h1 class="ty-title">Дякую<br>за <em>довіру!</em></h1>
 
-    <p class="ty-subtitle" style="font-size:30px;line-height:1.4;">Твоя покупка успішно оформлена. Ось що відбудеться далі:</p>
+    <p class="ty-subtitle">Курс починається в Telegram. Натисни кнопку нижче, щоб отримати перший урок прямо зараз:</p>
+
+    <div class="ty-btn-wrap" style="margin-bottom:12px;">
+      <a href="https://t.me/Course_AI_foto_bot?start=R2PjOOyhxeEA54ae" target="_blank" class="ty-btn-primary ty-btn-pulse">Відкрити Telegram-бот →</a>
+    </div>
+    <div class="ty-btn-hint">Без цього кроку курс не почнеться</div>
 
     <div class="ty-divider"></div>
 
-    <div style="width:100%;margin-bottom:32px;text-align:left;display:flex;flex-direction:column;gap:20px;">
+    <div class="ty-steps">
 
-      <p style="font-size:26px;font-weight:300;line-height:1.6;color:var(--black);">
-        Протягом 24 годин ти отримаєш перший урок у Telegram-боті <a href="https://t.me/Course_AI_foto_bot?start=R2PjOOyhxeEA54ae" target="_blank" style="color:#1a73e8;text-decoration:none;">https://t.me/Course_AI_foto_bot?start=R2PjOOyhxeEA54ae</a>. Щодня отримуватимеш новий урок. Доступ до всіх матеріалів зберігається 2 місяці.
-      </p>
+      <div class="ty-step">
+        <div class="ty-step-num">1</div>
+        <div class="ty-step-content">
+          <div class="ty-step-title">Натисни кнопку вище</div>
+          <div class="ty-step-text">Це відкриє бота в Telegram і запустить курс. Перший урок прийде відразу.</div>
+        </div>
+      </div>
 
-      <p style="font-size:26px;font-weight:300;line-height:1.6;color:var(--black);">
-        Є питання? Пиши в Telegram:<br>
-        <a href="https://t.me/MarynaShabinska" target="_blank" style="color:#1a73e8;text-decoration:none;">https://t.me/MarynaShabinska</a>
-      </p>
+      <div class="ty-step">
+        <div class="ty-step-num">2</div>
+        <div class="ty-step-content">
+          <div class="ty-step-title">Новий урок щодня</div>
+          <div class="ty-step-text">Далі уроки приходитимуть один за одним. Доступ до всіх матеріалів зберігається 2 місяці.</div>
+        </div>
+      </div>
+
+      <div class="ty-step">
+        <div class="ty-step-num">3</div>
+        <div class="ty-step-content">
+          <div class="ty-step-title">Питання?</div>
+          <div class="ty-step-text">Пиши напряму в Telegram: <a href="https://t.me/MarynaShabinska" target="_blank">@MarynaShabinska</a></div>
+        </div>
+      </div>
 
     </div>
 

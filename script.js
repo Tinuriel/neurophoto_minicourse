@@ -186,6 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const sectionsToTrack = [
     "hero",
     "scenario",
+    "old-vs-new",
     "gallery",
     "audience",
     "author",

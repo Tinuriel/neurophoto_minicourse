@@ -187,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "hero",
     "scenario",
     "old-vs-new",
+    "benefits",
     "gallery",
     "audience",
     "author",

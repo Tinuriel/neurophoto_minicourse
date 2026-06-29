@@ -137,6 +137,31 @@ h1 em { font-style: italic; color: var(--burgundy); }
   text-align: center; margin-top: 20px;
 }
 
+.benefits-list {
+  display: flex; flex-direction: column; gap: 12px;
+  margin-bottom: 20px;
+}
+
+.benefit-card {
+  background: var(--white); border-radius: 4px;
+  padding: 18px 20px; border-left: 2px solid var(--burgundy);
+}
+
+.benefit-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 500; color: var(--black);
+  margin-bottom: 6px;
+}
+
+.benefit-text {
+  font-size: 13px; font-weight: 300; line-height: 1.6; color: var(--gray);
+}
+
+.benefits-footer {
+  font-size: 14px; font-weight: 500; color: var(--burgundy);
+  text-align: center; margin-top: 8px;
+}
+
 .guarantee-line {
   font-size: 11px; font-weight: 300; color: var(--gray); line-height: 1.5;
   padding: 14px 0 32px; border-top: 0.5px solid rgba(26,26,26,0.1);

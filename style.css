@@ -881,6 +881,17 @@ h1 em { font-style: italic; color: var(--burgundy); }
   letter-spacing: 0.02em;
 }
 
+.results-intro {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--gray);
+  text-align: center;
+  margin: -8px 0 28px;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
 /* CAROUSEL WRAPPER */
 .gallery-carousel {
   overflow: hidden;

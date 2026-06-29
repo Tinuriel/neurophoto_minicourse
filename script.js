@@ -1,4 +1,4 @@
-// ── ДИНАМІЧНА ДАТА СТАРТУ (легасі-блоки, якщо є в HTML) ──
+// ── ДИНАМІЧНА ДАТА СТАРТУ ──
 
 function getMonthName(monthIndex) {
   var months = [
@@ -9,15 +9,14 @@ function getMonthName(monthIndex) {
 }
 
 function updateStartDate() {
-  var heroDate = document.getElementById('date-hero');
-  var ctaDate = document.getElementById('date-cta');
-  if (!heroDate && !ctaDate) return;
-
   var tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
   var day = tomorrow.getDate();
   var month = getMonthName(tomorrow.getMonth());
   var formatted = day + ' ' + month;
+
+  var heroDate = document.getElementById('date-hero');
+  var ctaDate = document.getElementById('date-cta');
 
   if (heroDate) heroDate.textContent = formatted;
   if (ctaDate) ctaDate.textContent = formatted;
@@ -26,40 +25,32 @@ function updateStartDate() {
 updateStartDate();
 setInterval(updateStartDate, 60000);
 
-// ── ТАЙМЕР ЗВОРОТНОГО ВІДЛІКУ (до кінця поточного тижня, неділя 23:59 за Києвом) ──
+// ── ТАЙМЕР ЗВОРОТНОГО ВІДЛІКУ (3 години) ──
 
-function getWeekDeadline() {
-  var now = new Date();
-  var kyivOffsetMs = 3 * 60 * 60 * 1000; // EEST, UTC+3
-  var kyivNow = new Date(now.getTime() + kyivOffsetMs - (now.getTimezoneOffset() * 60000));
-  var daysUntilSunday = (7 - kyivNow.getDay()) % 7;
-  var deadline = new Date(kyivNow);
-  deadline.setDate(kyivNow.getDate() + daysUntilSunday);
-  deadline.setHours(23, 59, 59, 0);
-  return { deadline: deadline, kyivNow: kyivNow };
-}
+var timerEnd = new Date(new Date().getTime() + 3 * 60 * 60 * 1000);
 
 function updateTimer() {
-  var dEl = document.getElementById('timer-days');
-  var hEl = document.getElementById('timer-hours');
-  var mEl = document.getElementById('timer-minutes');
-  if (!dEl && !hEl && !mEl) return;
+  var now = new Date();
+  var remaining = timerEnd - now;
 
-  var ref = getWeekDeadline();
-  var remaining = ref.deadline - ref.kyivNow;
-  if (remaining < 0) remaining = 0;
+  if (remaining <= 0) {
+    document.getElementById('timer-hours').textContent = '00';
+    document.getElementById('timer-minutes').textContent = '00';
+    document.getElementById('timer-seconds').textContent = '00';
+    return;
+  }
 
-  var days = Math.floor(remaining / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var hours = Math.floor(remaining / (1000 * 60 * 60));
   var minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((remaining % (1000 * 60)) / 1000);
 
-  if (dEl) dEl.textContent = days.toString().padStart(2, '0');
-  if (hEl) hEl.textContent = hours.toString().padStart(2, '0');
-  if (mEl) mEl.textContent = minutes.toString().padStart(2, '0');
+  document.getElementById('timer-hours').textContent = hours.toString().padStart(2, '0');
+  document.getElementById('timer-minutes').textContent = minutes.toString().padStart(2, '0');
+  document.getElementById('timer-seconds').textContent = seconds.toString().padStart(2, '0');
 }
 
 updateTimer();
-setInterval(updateTimer, 30000);
+setInterval(updateTimer, 1000);
 
 // ── ПЛАВАЮЧА КНОПКА ──
 
@@ -67,7 +58,6 @@ var floatBtn = document.getElementById('float-btn');
 var scrollThreshold = 400;
 
 function handleScroll() {
-  if (!floatBtn) return;
   if (window.pageYOffset > scrollThreshold) {
     floatBtn.classList.add('visible');
   } else {
@@ -185,9 +175,9 @@ function toggleFaq(header) {
 document.addEventListener("DOMContentLoaded", function () {
   const sectionsToTrack = [
     "hero",
+    "scenario",
     "gallery",
     "audience",
-    "focus",
     "author",
     "program",
     "how-it-works",

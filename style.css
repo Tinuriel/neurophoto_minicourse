@@ -138,6 +138,27 @@ h1 em { font-style: italic; color: var(--burgundy); }
   display: flex; align-items: flex-start; gap: 8px;
 }
 
+.scenario-section { padding-top: 8px; }
+
+.scenario-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 400; font-style: italic;
+  line-height: 1.45; color: var(--black);
+  margin-bottom: 24px;
+}
+
+.scenario-lead {
+  font-size: 14px; font-weight: 500; color: var(--black);
+  margin-bottom: 12px;
+}
+
+.scenario-footer {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 400; font-style: italic;
+  color: var(--burgundy); text-align: center;
+  margin-top: 24px;
+}
+
 .guarantee-line::before { content: '↺'; font-size: 13px; color: var(--burgundy); flex-shrink: 0; }
 
 /* ── ЕКРАН 2 ── */

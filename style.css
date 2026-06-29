@@ -138,24 +138,35 @@ h1 em { font-style: italic; color: var(--burgundy); }
   display: flex; align-items: flex-start; gap: 8px;
 }
 
-.scenario-section { padding-top: 8px; }
+.scenario-section {
+  background: var(--black);
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
 
 .scenario-intro {
   font-family: 'Cormorant Garamond', serif;
   font-size: 22px; font-weight: 400; font-style: italic;
-  line-height: 1.45; color: var(--black);
+  line-height: 1.45; color: var(--cream);
   margin-bottom: 24px;
 }
 
 .scenario-lead {
-  font-size: 14px; font-weight: 500; color: var(--black);
+  font-size: 14px; font-weight: 500; color: var(--cream);
   margin-bottom: 12px;
 }
+
+.scenario-section .block-body { background: rgba(245,240,232,0.06); }
+.scenario-section .block-text { color: var(--cream); }
+.scenario-section .block-icon { color: rgba(245,240,232,0.45); }
+.scenario-section .block-icon.check { color: #D4A574; }
+.scenario-section .block-item { border-bottom: 0.5px solid rgba(245,240,232,0.1); padding-bottom: 12px; margin-bottom: 12px; }
+.scenario-section .block-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
 
 .scenario-footer {
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px; font-weight: 400; font-style: italic;
-  color: var(--burgundy); text-align: center;
+  color: #D4A574; text-align: center;
   margin-top: 24px;
 }
 

@@ -1215,6 +1215,36 @@ h1 em { font-style: italic; color: var(--burgundy); }
   opacity: 0.65;
 }
 
+.norm-section { text-align: center; }
+
+.norm-timeline {
+  display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 32px;
+}
+
+.norm-row {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  font-size: 13px; font-weight: 300; color: var(--gray);
+  flex-wrap: wrap;
+}
+
+.norm-old { color: var(--gray); }
+.norm-arrow { color: var(--burgundy); font-size: 13px; }
+.norm-new { color: var(--black); font-weight: 500; }
+
+.norm-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 400; line-height: 1.2;
+  color: var(--black); margin-bottom: 20px;
+}
+
+.norm-title em { font-style: italic; color: var(--burgundy); }
+
+.norm-text {
+  font-size: 14px; font-weight: 300; line-height: 1.65; color: var(--gray);
+  max-width: 480px; margin: 0 auto;
+}
+
 /* DESKTOP: card becomes horizontal */
 @media (min-width: 640px) {
   .gallery-carousel {

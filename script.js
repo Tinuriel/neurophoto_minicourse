@@ -191,6 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "transformation",
     "locations",
     "gallery",
+    "norm",
     "audience",
     "author",
     "program",

@@ -189,6 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "old-vs-new",
     "benefits",
     "transformation",
+    "locations",
     "gallery",
     "audience",
     "author",

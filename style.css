@@ -162,6 +162,69 @@ h1 em { font-style: italic; color: var(--burgundy); }
   text-align: center; margin-top: 8px;
 }
 
+.transformation-intro {
+  font-size: 14px; font-weight: 300; line-height: 1.65; color: var(--gray);
+  margin-bottom: 28px;
+}
+
+.transformation-intro strong { font-weight: 500; color: var(--black); }
+
+.transformation-list {
+  display: flex; flex-direction: column; gap: 12px;
+  margin-bottom: 24px;
+}
+
+.transformation-row {
+  display: flex; flex-direction: column; gap: 8px;
+  background: var(--white); border-radius: 4px; overflow: hidden;
+}
+
+.transformation-col { padding: 16px 18px; }
+.transformation-col.before { background: rgba(26,26,26,0.025); }
+.transformation-col.after { background: rgba(139,26,47,0.04); }
+
+.transformation-label {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gray); margin-bottom: 8px;
+}
+
+.transformation-col.after .transformation-label { color: var(--burgundy); }
+
+.transformation-icon { font-size: 11px; color: var(--gray); }
+.transformation-icon.check { color: var(--burgundy); }
+
+.transformation-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px; font-weight: 500; font-style: italic;
+  line-height: 1.35; color: var(--black); margin-bottom: 6px;
+}
+
+.transformation-note { font-size: 12px; font-weight: 300; color: var(--gray); line-height: 1.5; }
+
+.transformation-arrow {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: var(--burgundy); padding: 2px 0;
+  transform: rotate(90deg);
+}
+
+.transformation-footer {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: var(--white); border-radius: 4px; padding: 18px 20px;
+}
+
+.transformation-footer-icon { font-size: 16px; color: var(--burgundy); flex-shrink: 0; margin-top: 2px; }
+.transformation-footer-main { font-size: 14px; font-weight: 500; color: var(--black); margin-bottom: 4px; }
+.transformation-footer-sub { font-size: 13px; font-weight: 300; color: var(--gray); }
+
+@media (min-width: 640px) {
+  .transformation-row {
+    flex-direction: row; align-items: stretch;
+  }
+  .transformation-col { flex: 1; padding: 20px 24px; }
+  .transformation-arrow { padding: 0 8px; flex-shrink: 0; transform: rotate(0deg); }
+}
+
 .guarantee-line {
   font-size: 11px; font-weight: 300; color: var(--gray); line-height: 1.5;
   padding: 14px 0 32px; border-top: 0.5px solid rgba(26,26,26,0.1);

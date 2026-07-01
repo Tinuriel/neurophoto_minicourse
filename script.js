@@ -198,6 +198,8 @@ document.addEventListener("DOMContentLoaded", function () {
     "how-it-works",
     "results",
     "pricing",
+    "five-days",
+    "important",
     "timer",
     "faq",
     "footer"

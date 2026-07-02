@@ -122,6 +122,13 @@ h1 em { font-style: italic; color: var(--burgundy); }
   font-family: 'Cormorant Garamond', serif;
   font-size: 19px; font-weight: 400; font-style: italic;
   line-height: 1.4; color: var(--black);
+  margin-bottom: 10px;
+}
+
+.hero-subline-sm {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px; font-weight: 300;
+  line-height: 1.6; color: var(--gray);
   margin-bottom: 18px;
 }
 

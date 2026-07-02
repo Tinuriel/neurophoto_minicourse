@@ -193,6 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "gallery",
     "norm",
     "audience",
+    "focus",
     "author",
     "program",
     "how-it-works",

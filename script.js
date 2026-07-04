@@ -180,11 +180,65 @@ function toggleFaq(header) {
   window.addEventListener('resize', () => goTo(current));
 })();
 
+// ── BEFORE/AFTER CAROUSEL ──
+(function() {
+  const track = document.getElementById('baTrack');
+  const dotsContainer = document.getElementById('baDots');
+  const prevBtn = document.getElementById('baPrev');
+  const nextBtn = document.getElementById('baNext');
+  if (!track) return;
+
+  const cards = track.querySelectorAll('.ba-card');
+  const total = cards.length;
+  let current = 0;
+
+  cards.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'ba-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => goTo(i);
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(index) {
+    current = Math.max(0, Math.min(index, total - 1));
+    const cardWidth = cards[0].offsetWidth;
+    track.style.transform = `translateX(${-current * cardWidth}px)`;
+    dotsContainer.querySelectorAll('.ba-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total - 1;
+  }
+
+  prevBtn.onclick = () => goTo(current - 1);
+  nextBtn.onclick = () => goTo(current + 1);
+  goTo(0);
+
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive: true});
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+  });
+
+  let dragging = false, dragStartX = 0;
+  track.parentElement.addEventListener('mousedown', e => { dragging = true; dragStartX = e.clientX; });
+  window.addEventListener('mouseup', e => {
+    if (!dragging) return;
+    dragging = false;
+    const diff = dragStartX - e.clientX;
+    if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+  });
+
+  window.addEventListener('resize', () => goTo(current));
+})();
+
 // ── UMAMI: ТРЕКІНГ ПЕРЕГЛЯДУ СЕКЦІЙ ──
 
 document.addEventListener("DOMContentLoaded", function () {
   const sectionsToTrack = [
     "hero",
+    "before-after",
     "scenario",
     "old-vs-new",
     "benefits",

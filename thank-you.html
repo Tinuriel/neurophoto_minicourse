@@ -34,6 +34,11 @@ src="https://www.facebook.com/tr?id=871716678655650&ev=Purchase&noscript=1"
     flex-direction: column;
   }
 
+  .top-price--muted {
+    color: var(--gray);
+    font-weight: 300;
+  }
+
   .ty-main {
     flex: 1;
     padding: 56px 24px 48px;
@@ -81,6 +86,11 @@ src="https://www.facebook.com/tr?id=871716678655650&ev=Purchase&noscript=1"
     width: 20px;
     height: 0.5px;
     background: var(--burgundy);
+  }
+
+  .ty-label--lg {
+    font-size: 20px;
+    letter-spacing: 0.07em;
   }
 
   .ty-title {
@@ -182,6 +192,10 @@ src="https://www.facebook.com/tr?id=871716678655650&ev=Purchase&noscript=1"
     margin-bottom: 16px;
   }
 
+  .ty-btn-wrap--cta {
+    margin-bottom: 12px;
+  }
+
   .ty-btn-back {
     display: block;
     width: 100%;
@@ -266,7 +280,7 @@ src="https://www.facebook.com/tr?id=871716678655650&ev=Purchase&noscript=1"
   <!-- ТОП-БАР -->
   <div class="top-bar">
     <span class="top-tag">Фото за 5 хвилин</span>
-    <span class="top-price" style="color:var(--gray);font-weight:300;">Замовлення оплачено</span>
+    <span class="top-price top-price--muted">Замовлення оплачено</span>
   </div>
 
   <!-- ГОЛОВНИЙ БЛОК -->
@@ -278,13 +292,13 @@ src="https://www.facebook.com/tr?id=871716678655650&ev=Purchase&noscript=1"
       </svg>
     </div>
 
-    <div class="ty-label" style="font-size:20px;letter-spacing:0.07em;">Оплата підтверджена</div>
+    <div class="ty-label ty-label--lg">Оплата підтверджена</div>
 
     <h1 class="ty-title">Дякую<br>за <em>довіру!</em></h1>
 
     <p class="ty-subtitle">Курс починається в Telegram. Натисни кнопку нижче, щоб отримати перший урок прямо зараз:</p>
 
-    <div class="ty-btn-wrap" style="margin-bottom:12px;">
+    <div class="ty-btn-wrap ty-btn-wrap--cta">
       <a href="https://t.me/Course_AI_foto_bot?start=R2PjOOyhxeEA54ae" target="_blank" class="ty-btn-primary ty-btn-pulse">Відкрити Telegram-бот →</a>
     </div>
     <div class="ty-btn-hint">Без цього кроку курс не почнеться</div>

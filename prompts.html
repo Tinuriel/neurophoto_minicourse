@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Промпти — Нейрофото для блогу</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27><rect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%238B1A2F%27/><circle cx=%2716%27 cy=%2716%27 r=%275%27 fill=%27none%27 stroke=%27white%27 stroke-width=%272%27/><rect x=%2710%27 y=%2710%27 width=%2712%27 height=%2210%27 rx=%272%27 fill=%27none%27 stroke=%27white%27 stroke-width=%271.5%27/><path d=%27M13 10 L14.5 8 h3 L19 10%27 fill=%27none%27 stroke=%27white%27 stroke-width=%271.5%27/></svg>">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ── Сторінка "Промпти" — локальні стилі ── */
+
+  .prompts-header {
+    padding: 32px 24px 8px;
+  }
+
+  .prompts-back {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 400; letter-spacing: 0.06em;
+    color: var(--gray); text-decoration: none; margin-bottom: 20px;
+  }
+
+  .prompts-back:hover { color: var(--burgundy); }
+
+  .prompts-lead {
+    font-size: 14px; font-weight: 300; color: var(--gray);
+    line-height: 1.6; margin-bottom: 8px;
+  }
+
+  .prompt-card {
+    background: var(--white);
+    border: 1px solid rgba(139,26,47,0.15);
+    border-radius: 8px;
+    margin: 0 24px 28px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(26,26,26,0.05);
+  }
+
+  .prompt-card-head {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 16px;
+    padding: 22px 20px;
+    border-bottom: 0.5px solid rgba(26,26,26,0.08);
+  }
+
+  .prompt-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400; line-height: 1.25;
+    color: var(--black);
+  }
+
+  .prompt-card-title em { font-style: italic; color: var(--burgundy); }
+
+  .copy-btn {
+    flex-shrink: 0;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--burgundy); color: var(--white);
+    border: none; border-radius: 3px;
+    padding: 11px 16px;
+    font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    cursor: pointer; white-space: nowrap;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .copy-btn:hover { background: #711523; }
+  .copy-btn:active { transform: scale(0.97); }
+
+  .copy-btn.copied { background: var(--black); }
+
+  .copy-btn svg { flex-shrink: 0; }
+
+  .prompt-card-body { padding: 20px; }
+
+  .prompt-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px; font-weight: 300; line-height: 1.65;
+    color: var(--black);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 420px;
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+
+  .prompt-text::-webkit-scrollbar { width: 4px; }
+  .prompt-text::-webkit-scrollbar-thumb { background: rgba(139,26,47,0.25); border-radius: 2px; }
+
+  .prompts-footer-note {
+    padding: 8px 24px 48px;
+    font-size: 11px; font-weight: 300; color: var(--gray);
+    line-height: 1.6; text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .prompts-header { padding: 48px 48px 8px; }
+    .prompt-card { margin: 0 48px 32px; }
+    .prompt-card-title { font-size: 26px; }
+    .prompt-text { font-size: 14px; max-height: 520px; }
+    .copy-btn { font-size: 13px; padding: 12px 20px; }
+    .prompts-footer-note { padding: 8px 48px 56px; }
+  }
+
+  @media (min-width: 1024px) {
+    .prompts-header { padding: 56px 64px 8px; }
+    .prompt-card { margin: 0 0 32px; }
+    .prompts-footer-note { padding: 8px 0 56px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <span class="top-tag">Нейрофото для блогу</span>
+    <span class="top-price">Промпти</span>
+  </div>
+
+  <div class="prompts-header">
+    <a href="/" class="prompts-back">← На головну</a>
+    <div class="section-label">Готові формули</div>
+    <h2>Два <em>промпти</em><br>для твоїх нейрофото</h2>
+    <p class="prompts-lead">Копіюй повний текст промпту одним натисканням і встав у ChatGPT (gpt‑image‑2) або Gemini (NanaBanana) разом зі своїми референсними фото.</p>
+  </div>
+
+  <!-- ПРОМПТ 1 -->
+  <div class="prompt-card">
+    <div class="prompt-card-head">
+      <div class="prompt-card-title">Промпт для створення <em>сітки 3×4</em></div>
+      <button class="copy-btn" data-target="prompt-1" onclick="copyPrompt(this)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        <span class="copy-btn-label">Копіювати</span>
+      </button>
+    </div>
+    <div class="prompt-card-body">
+      <div class="prompt-text" id="prompt-1">You are a world-class Art Director, Creative Director, Visual Identity Strategist, Editorial Photographer, Luxury Brand Consultant and AI Image Prompt Engineer. The user will upload one or more reference images. Your task is to analyze the references, extract their complete visual DNA, identify the aesthetic logic behind them, and generate a highly detailed MASTER FEED PROMPT for an AI image generator. Your final goal is to generate a complete Instagram feed generation prompt.
+Analyze internally: aesthetic style, visual category, brand positioning, luxury level, emotional tone, color palette, color temperature, lighting style, composition patterns, camera language, lens feeling, wardrobe styling, accessories, subject archetype, age range, personality traits, locations, architecture, interior style, recurring objects, recurring visual patterns, textures, editing style, realism level, storytelling style.
+Extract internally: core aesthetic, dominant colors, secondary colors, accent colors, mood, atmosphere, composition principles, lighting principles, styling principles, texture library, photography style, editing style, visual recognition elements.
+Design internally: feed concept, content distribution, visual hierarchy, image sequencing, storytelling flow, brand consistency.
+Create a balanced mix of: hero portraits, lifestyle scenes, work scenes, detail shots, interior shots, movement shots, emotional moments, environmental portraits, storytelling scenes, brand-defining images.
+Avoid: visual repetition, repeated poses, repeated framing, repeated camera angles, repeated storytelling moments, multiple versions of the same image.
+If a portrait reference is provided, create an internal Identity Lock. Preserve: exact facial identity, face shape, eye shape, eyebrow shape, nose shape, lips, skin tone, hair color, hair texture, age appearance. The same person must remain instantly recognizable throughout the entire feed.
+The generated MASTER FEED PROMPT must include: identity preservation instructions, visual DNA instructions, feed concept, feed structure, detailed description of every image, composition rules, lighting rules, wardrobe rules, environment rules, photography rules, camera rules, color grading rules, realism rules, cohesion rules.
+For each image specify: purpose in the grid, composition, camera angle, pose, wardrobe, location, lighting, mood, color palette, relationship to neighboring images.
+The feed must feel as if it was photographed: by the same photographer, during the same season, for the same brand, using the same visual language. The final aesthetic must maintain the exact style discovered in the references while expanding it into a complete visual world.
+The MASTER FEED PROMPT must be extremely detailed, highly descriptive, optimized for GPT Image, Midjourney, Flux and Ideogram, and written as one continuous image-generation prompt ready for direct use.
+IMPORTANT OUTPUT RULES: Perform all analysis internally. Never display: visual analysis, visual DNA, feed concept, feed structure, identity lock, observations, reasoning, explanations, summaries, notes, section headers, markdown formatting. Output ONLY the final MASTER FEED PROMPT. The response must contain nothing before the prompt and nothing after it.
+The very first words of the response must be exactly: "Generate a 3×4 Instagram grid showing all 12 images in one composition, each frame clearly different but visually cohesive. Use the woman from the reference image as the subject in every photograph. Preserve her exact facial identity, facial proportions, eye shape, nose shape, lips, eyebrows, skin tone, hair color, hair texture, age and overall appearance. She must be instantly recognizable as the same person in every image."
+If the references suggest a different image count, automatically adapt the grid structure while preserving the same concept. Return a single continuous image-generation prompt ready for direct use.</div>
+    </div>
+  </div>
+
+  <!-- ПРОМПТ 2 -->
+  <div class="prompt-card">
+    <div class="prompt-card-head">
+      <div class="prompt-card-title">Промпт для створення <em>схожого зображення</em></div>
+      <button class="copy-btn" data-target="prompt-2" onclick="copyPrompt(this)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        <span class="copy-btn-label">Копіювати</span>
+      </button>
+    </div>
+    <div class="prompt-card-body">
+      <div class="prompt-text" id="prompt-2">Create prompt. You are an expert in creating optimized AI image generation prompts. Your task is to create highly detailed, precise, and effective prompts that produce high-quality, aesthetically valuable images.
+Before generating the final image prompt, always prepend the following text exactly as written:
+"Use the woman from the reference image as the subject in every photograph. Preserve her exact facial identity, facial proportions, eye shape, nose shape, lips, eyebrows, skin tone, hair color, hair texture, age and overall appearance. She must be instantly recognizable as the same person in every image. Create a vertical photo"
+Then continue with the generated image description without altering, paraphrasing, shortening, or omitting any part of this text.
+The main subject of every prompt is the girl from the reference photo, who must be the central element of the composition.
+Always specify the exact camera angle and define the composition of the scene. If the image includes additional elements, describe their position, scale, and interaction with the girl to create a harmonious and balanced composition.
+Pay close attention to the color palette. Describe in detail the camera settings and photographic filters used to achieve the desired look. Make sure the colors support the overall atmosphere of the image. If the color scheme plays an important role in creating a specific mood, clearly describe the desired colors and their combinations.
+Do not forget to describe the lighting in detail, including the direction, softness, intensity, and atmosphere it creates. If the background is important for the scene, specify its characteristics — whether it is a city street at night with neon lights, a natural landscape at sunset, or another environment. This will help integrate the character naturally into the context and create the desired emotional atmosphere.
+Specify the visual style of the image when necessary to establish a clear artistic direction. Always mention the shooting point, camera position, and horizon level.
+Describe the girl's clothing as precisely as possible: her style, silhouette, size, length, color, material, texture, and how the fabric interacts with her movement and the environment. Make sure the outfit complements the overall mood and aesthetic of the scene.
+Always specify the exact camera angle, camera height, lens perspective, shooting distance, and define the composition of the scene. Explicitly describe the subject's pose, body orientation, head direction, gaze direction, shoulder position, hip alignment, and hand placement. Clearly state where the subject is looking and where the body is facing. Define whether the head and eyes follow the same direction as the body or create visual contrast by facing different directions. Ensure that the subject's position and orientation within the frame are described with complete clarity and precision.
+Describe the girl's clothing and accessories as precisely as possible: style, silhouette, fit, dimensions, length, color, material, fabric structure, texture, stitching details, patterns, embellishments, and how the materials interact with movement, light, and the environment. Describe all jewelry and accessories in exhaustive detail, including earrings, necklaces, chokers, rings, bracelets, watches, belts, handbags, sunglasses, hair ornaments, and decorative elements. Specify their materials, metals, gemstones, finishes, sizes, shapes, design language, luxury or fashion influences, placement on the body, and visual relationship to the outfit. Ensure that clothing, accessories, and jewelry work together as a cohesive fashion styling concept and contribute significantly to the overall aesthetic and atmosphere of the image.
+Generate a single continuous image-generation prompt in English only. Do not use bullet points, numbering, section titles, explanations, comments, quotation marks, or any text outside the final prompt itself.</div>
+    </div>
+  </div>
+
+  <p class="prompts-footer-note">Ці промпти призначені для генерації образів на основі твоїх власних референсних фото. Результат залежить від якості завантажених референсів.</p>
+
+<script>
+function copyPrompt(btn) {
+  var targetId = btn.getAttribute('data-target');
+  var text = document.getElementById(targetId).innerText;
+  var label = btn.querySelector('.copy-btn-label');
+  var finish = function() {
+    btn.classList.add('copied');
+    var prevLabel = label.textContent;
+    label.textContent = 'Скопійовано';
+    setTimeout(function() {
+      btn.classList.remove('copied');
+      label.textContent = prevLabel;
+    }, 2000);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(finish).catch(function() {
+      fallbackCopy(text, finish);
+    });
+  } else {
+    fallbackCopy(text, finish);
+  }
+}
+
+function fallbackCopy(text, cb) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try { document.execCommand('copy'); } catch (e) {}
+  document.body.removeChild(ta);
+  if (cb) cb();
+}
+</script>
+
+</body>
+</html>
